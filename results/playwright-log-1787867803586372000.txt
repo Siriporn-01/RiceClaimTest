@@ -1,0 +1,515 @@
+{"level":30,"time":"2026-08-27T21:56:47.532Z","pid":7956,"hostname":"F","msg":"Listening on 127.0.0.1:49910"}
+{"level":30,"time":"2026-08-27T21:56:47.655Z","pid":7956,"hostname":"F","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2026-08-27T21:56:49.010Z","pid":7956,"hostname":"F","msg":"Adding browser to stack: chromium, version: 141.0.7390.37"}
+{"level":30,"time":"2026-08-27T21:56:49.011Z","pid":7956,"hostname":"F","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2026-08-27T21:56:49.011Z","pid":7956,"hostname":"F","msg":"End of node method newBrowser"}
+{"level":30,"time":"2026-08-27T21:56:49.034Z","pid":7956,"hostname":"F","msg":"Start of node method newContext"}
+{"level":30,"time":"2026-08-27T21:56:49.034Z","pid":7956,"hostname":"F","msg":"Creating new context with options: {\"acceptDownloads\":true,\"bypassCSP\":false,\"forcedColors\":\"none\",\"ignoreHTTPSErrors\":false,\"javaScriptEnabled\":true,\"offline\":false,\"reducedMotion\":\"no-preference\",\"serviceWorkers\":\"allow\",\"viewport\":{\"width\":1920,\"height\":1000}}"}
+{"level":30,"time":"2026-08-27T21:56:49.035Z","pid":7956,"hostname":"F","msg":"currentBrowser: {\"name\":\"chromium\",\"browser\":{\"_type\":\"Browser\",\"_guid\":\"browser@54313b015607f68d8b1e9585c1572ddb\"},\"headless\":false,\"_contextStack\":[],\"id\":\"browser=ff2e9881-765e-478a-b5e5-d76ac9ab95d7\"}"}
+{"level":30,"time":"2026-08-27T21:56:49.035Z","pid":7956,"hostname":"F","msg":"Trace file: "}
+{"level":30,"time":"2026-08-27T21:56:49.066Z","pid":7956,"hostname":"F","msg":"Setting default timeout for context context=3196120d-9590-41b7-8426-ea34225d8ac7 to 10000"}
+{"level":30,"time":"2026-08-27T21:56:49.067Z","pid":7956,"hostname":"F","msg":"Changed active context: context=3196120d-9590-41b7-8426-ea34225d8ac7"}
+{"level":30,"time":"2026-08-27T21:56:49.067Z","pid":7956,"hostname":"F","msg":"End of node method newContext"}
+{"level":30,"time":"2026-08-27T21:56:49.114Z","pid":7956,"hostname":"F","msg":"Start of node method newPage"}
+{"level":30,"time":"2026-08-27T21:56:49.115Z","pid":7956,"hostname":"F","msg":"currentBrowser: {\"name\":\"chromium\",\"browser\":{\"_type\":\"Browser\",\"_guid\":\"browser@54313b015607f68d8b1e9585c1572ddb\"},\"headless\":false,\"_contextStack\":[{\"id\":\"context=3196120d-9590-41b7-8426-ea34225d8ac7\",\"c\":{\"_type\":\"BrowserContext\",\"_guid\":\"browser-context@6b81c53da1b7a4925fa639266821dc18\"},\"pageStack\":[],\"options\":{\"acceptDownloads\":true,\"bypassCSP\":false,\"forcedColors\":\"none\",\"ignoreHTTPSErrors\":false,\"javaScriptEnabled\":true,\"offline\":false,\"reducedMotion\":\"no-preference\",\"serviceWorkers\":\"allow\",\"viewport\":{\"width\":1920,\"height\":1000}},\"traceFile\":\"\"}],\"id\":\"browser=ff2e9881-765e-478a-b5e5-d76ac9ab95d7\"}"}
+{"level":30,"time":"2026-08-27T21:56:49.720Z","pid":7956,"hostname":"F","msg":"Video path: undefined"}
+{"level":30,"time":"2026-08-27T21:56:49.720Z","pid":7956,"hostname":"F","msg":"Changed active page"}
+{"level":30,"time":"2026-08-27T21:56:51.270Z","pid":7956,"hostname":"F","msg":"End of node method newPage"}
+{"level":30,"time":"2026-08-27T21:56:51.428Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:56:51.442Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:56:51.473Z","pid":7956,"hostname":"F","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-08-27T21:56:51.983Z","pid":7956,"hostname":"F","msg":"End of node method goTo"}
+{"level":30,"time":"2026-08-27T21:56:52.019Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:56:52.020Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[role=\"radio\"][value=\"farmer\"] in page."}
+{"level":30,"time":"2026-08-27T21:56:52.269Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:56:52.280Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:56:52.280Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2026-08-27T21:56:52.317Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:56:52.329Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:56:52.329Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2026-08-27T21:56:52.366Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:56:52.378Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:56:52.378Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[type=\"submit\"] in page."}
+{"level":30,"time":"2026-08-27T21:56:52.457Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:56:52.471Z","pid":7956,"hostname":"F","msg":"Start of node method getText"}
+{"level":30,"time":"2026-08-27T21:56:52.472Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[data-slot=\"dialog-description\"] in page."}
+{"level":30,"time":"2026-08-27T21:56:53.976Z","pid":7956,"hostname":"F","msg":"Retrieved text for element css=[data-slot=\"dialog-description\"] containing เลขทะเบียนเกษตรกรหรือรหัสผ่านไม่ถูกต้อง"}
+{"level":30,"time":"2026-08-27T21:56:53.976Z","pid":7956,"hostname":"F","msg":"End of node method getText"}
+{"level":30,"time":"2026-08-27T21:56:54.005Z","pid":7956,"hostname":"F","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:56:54.006Z","pid":7956,"hostname":"F","Take screenshot with options: ":{"path":"C:\\RiceClaimTest\\results\\Screens\\LoginFarmer\\TC01_001.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2026-08-27T21:56:55.372Z","pid":7956,"hostname":"F","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:56:55.607Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:56:55.607Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[role=\"dialog\"] button in page."}
+{"level":30,"time":"2026-08-27T21:56:55.678Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:56:55.747Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:56:55.751Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:56:55.770Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:56:55.775Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:56:55.876Z","pid":7956,"hostname":"F","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-08-27T21:56:56.317Z","pid":7956,"hostname":"F","msg":"End of node method goTo"}
+{"level":30,"time":"2026-08-27T21:56:56.355Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:56:56.355Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[role=\"radio\"][value=\"farmer\"] in page."}
+{"level":30,"time":"2026-08-27T21:56:56.512Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:56:56.521Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:56:56.522Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2026-08-27T21:56:56.549Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:56:56.559Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:56:56.559Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2026-08-27T21:56:56.595Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:56:56.609Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:56:56.609Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[type=\"submit\"] in page."}
+{"level":30,"time":"2026-08-27T21:56:56.670Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:56:56.686Z","pid":7956,"hostname":"F","msg":"Start of node method getText"}
+{"level":30,"time":"2026-08-27T21:56:56.686Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[data-slot=\"dialog-description\"] in page."}
+{"level":30,"time":"2026-08-27T21:56:56.911Z","pid":7956,"hostname":"F","msg":"Retrieved text for element css=[data-slot=\"dialog-description\"] containing เลขทะเบียนเกษตรกรหรือรหัสผ่านไม่ถูกต้อง"}
+{"level":30,"time":"2026-08-27T21:56:56.911Z","pid":7956,"hostname":"F","msg":"End of node method getText"}
+{"level":30,"time":"2026-08-27T21:56:56.940Z","pid":7956,"hostname":"F","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:56:56.940Z","pid":7956,"hostname":"F","Take screenshot with options: ":{"path":"C:\\RiceClaimTest\\results\\Screens\\LoginFarmer\\TC01_002.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2026-08-27T21:56:58.217Z","pid":7956,"hostname":"F","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:56:58.408Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:56:58.408Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[role=\"dialog\"] button in page."}
+{"level":30,"time":"2026-08-27T21:56:58.467Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:56:58.533Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:56:58.538Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:56:58.561Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:56:58.564Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:56:58.606Z","pid":7956,"hostname":"F","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-08-27T21:56:58.993Z","pid":7956,"hostname":"F","msg":"End of node method goTo"}
+{"level":30,"time":"2026-08-27T21:56:59.026Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:56:59.026Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[role=\"radio\"][value=\"farmer\"] in page."}
+{"level":30,"time":"2026-08-27T21:56:59.160Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:56:59.168Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:56:59.168Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2026-08-27T21:56:59.192Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:56:59.202Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:56:59.202Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2026-08-27T21:56:59.231Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:56:59.243Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:56:59.243Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[type=\"submit\"] in page."}
+{"level":30,"time":"2026-08-27T21:56:59.310Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:56:59.324Z","pid":7956,"hostname":"F","msg":"Start of node method getText"}
+{"level":30,"time":"2026-08-27T21:56:59.324Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[data-slot=\"dialog-description\"] in page."}
+{"level":50,"time":"2026-08-27T21:57:09.329Z","pid":7956,"hostname":"F","err":{"type":"TimeoutError","message":"locator.elementHandle: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-slot=\"dialog-description\"]')\u001b[22m\n","stack":"locator.elementHandle: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-slot=\"dialog-description\"]')\u001b[22m\n\n    at getTextContent (C:\\Users\\fexrn\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\Browser\\wrapper\\index.js:12025:33)\n    at getText (C:\\Users\\fexrn\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\Browser\\wrapper\\index.js:12039:21)\n    at async PlaywrightServer.getText (C:\\Users\\fexrn\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\Browser\\wrapper\\index.js:13635:28)","name":"TimeoutError"},"msg":"locator.elementHandle: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-slot=\"dialog-description\"]')\u001b[22m\n"}
+================= Original suppressed error =================
+locator.elementHandle: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-slot="dialog-description"]')[22m
+
+    at getTextContent (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:12025:33)
+    at getText (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:12039:21)
+    at async PlaywrightServer.getText (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:13635:28) {
+  name: 'TimeoutError'
+}
+=============================================================
+{"level":30,"time":"2026-08-27T21:57:09.330Z","pid":7956,"hostname":"F","msg":"Error of node method  getText"}
+{"level":30,"time":"2026-08-27T21:57:09.339Z","pid":7956,"hostname":"F","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:57:09.339Z","pid":7956,"hostname":"F","Take screenshot with options: ":{"path":"C:\\RiceClaimTest\\results\\browser\\screenshot\\fail-screenshot-1.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2026-08-27T21:57:10.441Z","pid":7956,"hostname":"F","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:57:10.549Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:10.552Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:10.605Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:10.608Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:10.640Z","pid":7956,"hostname":"F","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-08-27T21:57:11.030Z","pid":7956,"hostname":"F","msg":"End of node method goTo"}
+{"level":30,"time":"2026-08-27T21:57:11.059Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:57:11.060Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[role=\"radio\"][value=\"farmer\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:11.207Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:57:11.217Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:11.217Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:11.249Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:11.262Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:11.263Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:11.306Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:11.319Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:57:11.320Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[type=\"submit\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:11.383Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:57:11.399Z","pid":7956,"hostname":"F","msg":"Start of node method getText"}
+{"level":30,"time":"2026-08-27T21:57:11.400Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[data-slot=\"dialog-description\"] in page."}
+{"level":50,"time":"2026-08-27T21:57:21.404Z","pid":7956,"hostname":"F","err":{"type":"TimeoutError","message":"locator.elementHandle: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-slot=\"dialog-description\"]')\u001b[22m\n","stack":"locator.elementHandle: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-slot=\"dialog-description\"]')\u001b[22m\n\n    at getTextContent (C:\\Users\\fexrn\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\Browser\\wrapper\\index.js:12025:33)\n    at getText (C:\\Users\\fexrn\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\Browser\\wrapper\\index.js:12039:21)\n    at async PlaywrightServer.getText (C:\\Users\\fexrn\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\Browser\\wrapper\\index.js:13635:28)","name":"TimeoutError"},"msg":"locator.elementHandle: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-slot=\"dialog-description\"]')\u001b[22m\n"}
+================= Original suppressed error =================
+locator.elementHandle: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-slot="dialog-description"]')[22m
+
+    at getTextContent (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:12025:33)
+    at getText (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:12039:21)
+    at async PlaywrightServer.getText (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:13635:28) {
+  name: 'TimeoutError'
+}
+=============================================================
+{"level":30,"time":"2026-08-27T21:57:21.404Z","pid":7956,"hostname":"F","msg":"Error of node method  getText"}
+{"level":30,"time":"2026-08-27T21:57:21.412Z","pid":7956,"hostname":"F","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:57:21.412Z","pid":7956,"hostname":"F","Take screenshot with options: ":{"path":"C:\\RiceClaimTest\\results\\browser\\screenshot\\fail-screenshot-2.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2026-08-27T21:57:22.476Z","pid":7956,"hostname":"F","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:57:22.571Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:22.574Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:22.593Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:22.596Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:22.624Z","pid":7956,"hostname":"F","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-08-27T21:57:23.078Z","pid":7956,"hostname":"F","msg":"End of node method goTo"}
+{"level":30,"time":"2026-08-27T21:57:23.108Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:57:23.108Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[role=\"radio\"][value=\"farmer\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:23.254Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:57:23.264Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:23.264Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:23.286Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:23.297Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:23.297Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:23.330Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:23.342Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:57:23.342Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[type=\"submit\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:23.402Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:57:23.416Z","pid":7956,"hostname":"F","msg":"Start of node method getText"}
+{"level":30,"time":"2026-08-27T21:57:23.416Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[data-slot=\"dialog-description\"] in page."}
+{"level":50,"time":"2026-08-27T21:57:33.426Z","pid":7956,"hostname":"F","err":{"type":"TimeoutError","message":"locator.elementHandle: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-slot=\"dialog-description\"]')\u001b[22m\n","stack":"locator.elementHandle: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-slot=\"dialog-description\"]')\u001b[22m\n\n    at getTextContent (C:\\Users\\fexrn\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\Browser\\wrapper\\index.js:12025:33)\n    at getText (C:\\Users\\fexrn\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\Browser\\wrapper\\index.js:12039:21)\n    at async PlaywrightServer.getText (C:\\Users\\fexrn\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\Browser\\wrapper\\index.js:13635:28)","name":"TimeoutError"},"msg":"locator.elementHandle: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-slot=\"dialog-description\"]')\u001b[22m\n"}
+================= Original suppressed error =================
+locator.elementHandle: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-slot="dialog-description"]')[22m
+
+    at getTextContent (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:12025:33)
+    at getText (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:12039:21)
+    at async PlaywrightServer.getText (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:13635:28) {
+  name: 'TimeoutError'
+}
+=============================================================
+{"level":30,"time":"2026-08-27T21:57:33.426Z","pid":7956,"hostname":"F","msg":"Error of node method  getText"}
+{"level":30,"time":"2026-08-27T21:57:33.434Z","pid":7956,"hostname":"F","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:57:33.434Z","pid":7956,"hostname":"F","Take screenshot with options: ":{"path":"C:\\RiceClaimTest\\results\\browser\\screenshot\\fail-screenshot-3.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2026-08-27T21:57:34.596Z","pid":7956,"hostname":"F","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:57:34.715Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:34.719Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:34.795Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:34.799Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:34.826Z","pid":7956,"hostname":"F","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-08-27T21:57:35.266Z","pid":7956,"hostname":"F","msg":"End of node method goTo"}
+{"level":30,"time":"2026-08-27T21:57:35.298Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:57:35.298Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[role=\"radio\"][value=\"farmer\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:35.448Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:57:35.457Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:35.457Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:35.483Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:35.494Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:35.494Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:35.532Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:35.546Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:57:35.547Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[type=\"submit\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:35.608Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:57:35.621Z","pid":7956,"hostname":"F","msg":"Start of node method getText"}
+{"level":30,"time":"2026-08-27T21:57:35.621Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[data-slot=\"dialog-description\"] in page."}
+{"level":50,"time":"2026-08-27T21:57:45.627Z","pid":7956,"hostname":"F","err":{"type":"TimeoutError","message":"locator.elementHandle: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-slot=\"dialog-description\"]')\u001b[22m\n","stack":"locator.elementHandle: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-slot=\"dialog-description\"]')\u001b[22m\n\n    at getTextContent (C:\\Users\\fexrn\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\Browser\\wrapper\\index.js:12025:33)\n    at getText (C:\\Users\\fexrn\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\Browser\\wrapper\\index.js:12039:21)\n    at async PlaywrightServer.getText (C:\\Users\\fexrn\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\Browser\\wrapper\\index.js:13635:28)","name":"TimeoutError"},"msg":"locator.elementHandle: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-slot=\"dialog-description\"]')\u001b[22m\n"}
+================= Original suppressed error =================
+locator.elementHandle: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-slot="dialog-description"]')[22m
+
+    at getTextContent (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:12025:33)
+    at getText (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:12039:21)
+    at async PlaywrightServer.getText (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:13635:28) {
+  name: 'TimeoutError'
+}
+=============================================================
+{"level":30,"time":"2026-08-27T21:57:45.627Z","pid":7956,"hostname":"F","msg":"Error of node method  getText"}
+{"level":30,"time":"2026-08-27T21:57:45.636Z","pid":7956,"hostname":"F","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:57:45.636Z","pid":7956,"hostname":"F","Take screenshot with options: ":{"path":"C:\\RiceClaimTest\\results\\browser\\screenshot\\fail-screenshot-4.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2026-08-27T21:57:46.757Z","pid":7956,"hostname":"F","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:57:46.840Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:46.843Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:46.862Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:46.864Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:46.890Z","pid":7956,"hostname":"F","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-08-27T21:57:47.251Z","pid":7956,"hostname":"F","msg":"End of node method goTo"}
+{"level":30,"time":"2026-08-27T21:57:47.281Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:57:47.281Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[role=\"radio\"][value=\"farmer\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:47.446Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:57:47.456Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:47.457Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:47.479Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:47.488Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:47.488Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:47.525Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:47.536Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:57:47.537Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[type=\"submit\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:47.591Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:57:47.611Z","pid":7956,"hostname":"F","msg":"Start of node method getText"}
+{"level":30,"time":"2026-08-27T21:57:47.611Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[data-slot=\"dialog-description\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:47.801Z","pid":7956,"hostname":"F","msg":"Retrieved text for element css=[data-slot=\"dialog-description\"] containing เลขทะเบียนเกษตรกรหรือรหัสผ่านไม่ถูกต้อง"}
+{"level":30,"time":"2026-08-27T21:57:47.801Z","pid":7956,"hostname":"F","msg":"End of node method getText"}
+{"level":30,"time":"2026-08-27T21:57:47.828Z","pid":7956,"hostname":"F","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:57:47.828Z","pid":7956,"hostname":"F","Take screenshot with options: ":{"path":"C:\\RiceClaimTest\\results\\Screens\\LoginFarmer\\TC01_007.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2026-08-27T21:57:49.032Z","pid":7956,"hostname":"F","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:57:49.228Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:57:49.228Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[role=\"dialog\"] button in page."}
+{"level":30,"time":"2026-08-27T21:57:49.288Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:57:49.357Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:49.361Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:49.459Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:49.463Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:49.493Z","pid":7956,"hostname":"F","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-08-27T21:57:49.871Z","pid":7956,"hostname":"F","msg":"End of node method goTo"}
+{"level":30,"time":"2026-08-27T21:57:49.903Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:57:49.903Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[role=\"radio\"][value=\"farmer\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:50.048Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:57:50.058Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:50.058Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:50.082Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:50.094Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:50.094Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:50.126Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:50.142Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:57:50.142Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[type=\"submit\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:50.203Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:57:50.217Z","pid":7956,"hostname":"F","msg":"Start of node method getText"}
+{"level":30,"time":"2026-08-27T21:57:50.217Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[data-slot=\"dialog-description\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:50.519Z","pid":7956,"hostname":"F","msg":"Retrieved text for element css=[data-slot=\"dialog-description\"] containing เลขทะเบียนเกษตรกรหรือรหัสผ่านไม่ถูกต้อง"}
+{"level":30,"time":"2026-08-27T21:57:50.519Z","pid":7956,"hostname":"F","msg":"End of node method getText"}
+{"level":30,"time":"2026-08-27T21:57:50.552Z","pid":7956,"hostname":"F","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:57:50.553Z","pid":7956,"hostname":"F","Take screenshot with options: ":{"path":"C:\\RiceClaimTest\\results\\Screens\\LoginFarmer\\TC01_008.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2026-08-27T21:57:51.771Z","pid":7956,"hostname":"F","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:57:51.985Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:57:51.985Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[role=\"dialog\"] button in page."}
+{"level":30,"time":"2026-08-27T21:57:52.045Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:57:52.125Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:52.128Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:52.151Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:52.155Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:52.193Z","pid":7956,"hostname":"F","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-08-27T21:57:52.623Z","pid":7956,"hostname":"F","msg":"End of node method goTo"}
+{"level":30,"time":"2026-08-27T21:57:52.657Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:57:52.657Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[role=\"radio\"][value=\"farmer\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:52.802Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:57:52.812Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:52.812Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:52.840Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:52.852Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:52.852Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:52.885Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:52.899Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:57:52.900Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[type=\"submit\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:52.966Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:57:52.984Z","pid":7956,"hostname":"F","msg":"Start of node method getText"}
+{"level":30,"time":"2026-08-27T21:57:52.984Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[data-slot=\"dialog-description\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:53.222Z","pid":7956,"hostname":"F","msg":"Retrieved text for element css=[data-slot=\"dialog-description\"] containing เลขทะเบียนเกษตรกรหรือรหัสผ่านไม่ถูกต้อง"}
+{"level":30,"time":"2026-08-27T21:57:53.223Z","pid":7956,"hostname":"F","msg":"End of node method getText"}
+{"level":30,"time":"2026-08-27T21:57:53.253Z","pid":7956,"hostname":"F","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:57:53.253Z","pid":7956,"hostname":"F","Take screenshot with options: ":{"path":"C:\\RiceClaimTest\\results\\Screens\\LoginFarmer\\TC01_009.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2026-08-27T21:57:54.450Z","pid":7956,"hostname":"F","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:57:54.661Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:57:54.661Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[role=\"dialog\"] button in page."}
+{"level":30,"time":"2026-08-27T21:57:54.715Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:57:54.785Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:54.788Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:54.807Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:54.811Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:54.845Z","pid":7956,"hostname":"F","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-08-27T21:57:55.275Z","pid":7956,"hostname":"F","msg":"End of node method goTo"}
+{"level":30,"time":"2026-08-27T21:57:55.307Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:57:55.307Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[role=\"radio\"][value=\"farmer\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:55.457Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:57:55.468Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:55.468Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:55.498Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:55.510Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:55.511Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:55.543Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:55.556Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:57:55.556Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[type=\"submit\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:55.624Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:57:55.642Z","pid":7956,"hostname":"F","msg":"Start of node method getText"}
+{"level":30,"time":"2026-08-27T21:57:55.643Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[data-slot=\"dialog-description\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:55.835Z","pid":7956,"hostname":"F","msg":"Retrieved text for element css=[data-slot=\"dialog-description\"] containing เลขทะเบียนเกษตรกรหรือรหัสผ่านไม่ถูกต้อง"}
+{"level":30,"time":"2026-08-27T21:57:55.835Z","pid":7956,"hostname":"F","msg":"End of node method getText"}
+{"level":30,"time":"2026-08-27T21:57:55.862Z","pid":7956,"hostname":"F","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:57:55.862Z","pid":7956,"hostname":"F","Take screenshot with options: ":{"path":"C:\\RiceClaimTest\\results\\Screens\\LoginFarmer\\TC01_010.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2026-08-27T21:57:57.035Z","pid":7956,"hostname":"F","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:57:57.234Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:57:57.234Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[role=\"dialog\"] button in page."}
+{"level":30,"time":"2026-08-27T21:57:57.299Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:57:57.361Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:57.364Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:57.386Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:57.389Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:57.434Z","pid":7956,"hostname":"F","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-08-27T21:57:57.827Z","pid":7956,"hostname":"F","msg":"End of node method goTo"}
+{"level":30,"time":"2026-08-27T21:57:57.860Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:57:57.860Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[role=\"radio\"][value=\"farmer\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:58.006Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:57:58.016Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:58.016Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:58.043Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:58.054Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:58.054Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:58.093Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:57:58.106Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:57:58.106Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[type=\"submit\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:58.169Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:57:58.187Z","pid":7956,"hostname":"F","msg":"Start of node method getText"}
+{"level":30,"time":"2026-08-27T21:57:58.187Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[data-slot=\"dialog-description\"] in page."}
+{"level":30,"time":"2026-08-27T21:57:58.371Z","pid":7956,"hostname":"F","msg":"Retrieved text for element css=[data-slot=\"dialog-description\"] containing เลขทะเบียนเกษตรกรหรือรหัสผ่านไม่ถูกต้อง"}
+{"level":30,"time":"2026-08-27T21:57:58.371Z","pid":7956,"hostname":"F","msg":"End of node method getText"}
+{"level":30,"time":"2026-08-27T21:57:58.403Z","pid":7956,"hostname":"F","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:57:58.403Z","pid":7956,"hostname":"F","Take screenshot with options: ":{"path":"C:\\RiceClaimTest\\results\\Screens\\LoginFarmer\\TC01_011.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2026-08-27T21:57:59.658Z","pid":7956,"hostname":"F","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:57:59.846Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:57:59.846Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[role=\"dialog\"] button in page."}
+{"level":30,"time":"2026-08-27T21:57:59.899Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:57:59.961Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:59.966Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:59.986Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:57:59.990Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:58:00.025Z","pid":7956,"hostname":"F","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-08-27T21:58:00.462Z","pid":7956,"hostname":"F","msg":"End of node method goTo"}
+{"level":30,"time":"2026-08-27T21:58:00.500Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:58:00.500Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[role=\"radio\"][value=\"farmer\"] in page."}
+{"level":30,"time":"2026-08-27T21:58:00.658Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:58:00.668Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:58:00.668Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2026-08-27T21:58:00.693Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:58:00.704Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:58:00.704Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2026-08-27T21:58:00.737Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:58:00.752Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:58:00.752Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[type=\"submit\"] in page."}
+{"level":30,"time":"2026-08-27T21:58:00.816Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:58:00.831Z","pid":7956,"hostname":"F","msg":"Start of node method getText"}
+{"level":30,"time":"2026-08-27T21:58:00.832Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[data-slot=\"dialog-description\"] in page."}
+{"level":30,"time":"2026-08-27T21:58:01.004Z","pid":7956,"hostname":"F","msg":"Retrieved text for element css=[data-slot=\"dialog-description\"] containing เลขทะเบียนเกษตรกรหรือรหัสผ่านไม่ถูกต้อง"}
+{"level":30,"time":"2026-08-27T21:58:01.004Z","pid":7956,"hostname":"F","msg":"End of node method getText"}
+{"level":30,"time":"2026-08-27T21:58:01.035Z","pid":7956,"hostname":"F","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:58:01.035Z","pid":7956,"hostname":"F","Take screenshot with options: ":{"path":"C:\\RiceClaimTest\\results\\Screens\\LoginFarmer\\TC01_012.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2026-08-27T21:58:02.291Z","pid":7956,"hostname":"F","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:58:02.475Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:58:02.476Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[role=\"dialog\"] button in page."}
+{"level":30,"time":"2026-08-27T21:58:02.531Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:58:02.596Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:58:02.600Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:58:02.647Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:58:02.651Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:58:02.711Z","pid":7956,"hostname":"F","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-08-27T21:58:03.149Z","pid":7956,"hostname":"F","msg":"End of node method goTo"}
+{"level":30,"time":"2026-08-27T21:58:03.272Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:58:03.272Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[role=\"radio\"][value=\"farmer\"] in page."}
+{"level":30,"time":"2026-08-27T21:58:03.320Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:58:03.329Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:58:03.329Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2026-08-27T21:58:03.350Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:58:03.362Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:58:03.362Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2026-08-27T21:58:03.388Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:58:03.401Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:58:03.401Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[type=\"submit\"] in page."}
+{"level":30,"time":"2026-08-27T21:58:03.455Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:58:03.472Z","pid":7956,"hostname":"F","msg":"Start of node method getText"}
+{"level":30,"time":"2026-08-27T21:58:03.472Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[data-slot=\"dialog-description\"] in page."}
+{"level":30,"time":"2026-08-27T21:58:03.782Z","pid":7956,"hostname":"F","msg":"Retrieved text for element css=[data-slot=\"dialog-description\"] containing เลขทะเบียนเกษตรกรหรือรหัสผ่านไม่ถูกต้อง"}
+{"level":30,"time":"2026-08-27T21:58:03.783Z","pid":7956,"hostname":"F","msg":"End of node method getText"}
+{"level":30,"time":"2026-08-27T21:58:03.808Z","pid":7956,"hostname":"F","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:58:03.809Z","pid":7956,"hostname":"F","Take screenshot with options: ":{"path":"C:\\RiceClaimTest\\results\\Screens\\LoginFarmer\\TC01_013.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2026-08-27T21:58:05.094Z","pid":7956,"hostname":"F","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:58:05.322Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:58:05.322Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[role=\"dialog\"] button in page."}
+{"level":30,"time":"2026-08-27T21:58:05.380Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:58:05.454Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:58:05.457Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:58:05.498Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:58:05.501Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:58:05.536Z","pid":7956,"hostname":"F","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-08-27T21:58:05.965Z","pid":7956,"hostname":"F","msg":"End of node method goTo"}
+{"level":30,"time":"2026-08-27T21:58:05.997Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:58:05.997Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[role=\"radio\"][value=\"farmer\"] in page."}
+{"level":30,"time":"2026-08-27T21:58:06.129Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:58:06.138Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:58:06.138Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2026-08-27T21:58:06.163Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:58:06.173Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:58:06.173Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2026-08-27T21:58:06.202Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:58:06.215Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:58:06.215Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[type=\"submit\"] in page."}
+{"level":30,"time":"2026-08-27T21:58:06.271Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:58:06.289Z","pid":7956,"hostname":"F","msg":"Start of node method getText"}
+{"level":30,"time":"2026-08-27T21:58:06.289Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[data-slot=\"dialog-description\"] in page."}
+{"level":30,"time":"2026-08-27T21:58:06.480Z","pid":7956,"hostname":"F","msg":"Retrieved text for element css=[data-slot=\"dialog-description\"] containing เลขทะเบียนเกษตรกรหรือรหัสผ่านไม่ถูกต้อง"}
+{"level":30,"time":"2026-08-27T21:58:06.480Z","pid":7956,"hostname":"F","msg":"End of node method getText"}
+{"level":30,"time":"2026-08-27T21:58:06.508Z","pid":7956,"hostname":"F","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:58:06.508Z","pid":7956,"hostname":"F","Take screenshot with options: ":{"path":"C:\\RiceClaimTest\\results\\Screens\\LoginFarmer\\TC01_014.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2026-08-27T21:58:07.671Z","pid":7956,"hostname":"F","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:58:07.856Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:58:07.856Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[role=\"dialog\"] button in page."}
+{"level":30,"time":"2026-08-27T21:58:07.906Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:58:07.968Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:58:07.971Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:58:08.054Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:58:08.064Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:58:08.105Z","pid":7956,"hostname":"F","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-08-27T21:58:08.542Z","pid":7956,"hostname":"F","msg":"End of node method goTo"}
+{"level":30,"time":"2026-08-27T21:58:08.579Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:58:08.580Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[role=\"radio\"][value=\"farmer\"] in page."}
+{"level":30,"time":"2026-08-27T21:58:08.745Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:58:08.755Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:58:08.755Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2026-08-27T21:58:08.782Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:58:08.794Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:58:08.794Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2026-08-27T21:58:08.832Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:58:08.847Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:58:08.848Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[type=\"submit\"] in page."}
+{"level":30,"time":"2026-08-27T21:58:08.912Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:58:08.927Z","pid":7956,"hostname":"F","msg":"Start of node method getText"}
+{"level":30,"time":"2026-08-27T21:58:08.928Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[data-slot=\"dialog-description\"] in page."}
+{"level":30,"time":"2026-08-27T21:58:09.089Z","pid":7956,"hostname":"F","msg":"Retrieved text for element css=[data-slot=\"dialog-description\"] containing เลขทะเบียนเกษตรกรหรือรหัสผ่านไม่ถูกต้อง"}
+{"level":30,"time":"2026-08-27T21:58:09.089Z","pid":7956,"hostname":"F","msg":"End of node method getText"}
+{"level":30,"time":"2026-08-27T21:58:09.118Z","pid":7956,"hostname":"F","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:58:09.118Z","pid":7956,"hostname":"F","Take screenshot with options: ":{"path":"C:\\RiceClaimTest\\results\\Screens\\LoginFarmer\\TC01_015.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2026-08-27T21:58:10.350Z","pid":7956,"hostname":"F","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:58:10.580Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:58:10.580Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[role=\"dialog\"] button in page."}
+{"level":30,"time":"2026-08-27T21:58:10.651Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:58:10.733Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:58:10.739Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:58:10.761Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:58:10.765Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:58:10.804Z","pid":7956,"hostname":"F","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-08-27T21:58:11.243Z","pid":7956,"hostname":"F","msg":"End of node method goTo"}
+{"level":30,"time":"2026-08-27T21:58:11.279Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:58:11.280Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[role=\"radio\"][value=\"farmer\"] in page."}
+{"level":30,"time":"2026-08-27T21:58:11.470Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:58:11.479Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:58:11.479Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2026-08-27T21:58:11.503Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:58:11.512Z","pid":7956,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-27T21:58:11.512Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2026-08-27T21:58:11.548Z","pid":7956,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-27T21:58:11.561Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:58:11.562Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=button[type=\"submit\"] in page."}
+{"level":30,"time":"2026-08-27T21:58:11.622Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:58:11.639Z","pid":7956,"hostname":"F","msg":"Start of node method getText"}
+{"level":30,"time":"2026-08-27T21:58:11.639Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[data-slot=\"dialog-description\"] in page."}
+{"level":30,"time":"2026-08-27T21:58:11.807Z","pid":7956,"hostname":"F","msg":"Retrieved text for element css=[data-slot=\"dialog-description\"] containing เลขทะเบียนเกษตรกรหรือรหัสผ่านไม่ถูกต้อง"}
+{"level":30,"time":"2026-08-27T21:58:11.807Z","pid":7956,"hostname":"F","msg":"End of node method getText"}
+{"level":30,"time":"2026-08-27T21:58:11.837Z","pid":7956,"hostname":"F","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:58:11.837Z","pid":7956,"hostname":"F","Take screenshot with options: ":{"path":"C:\\RiceClaimTest\\results\\Screens\\LoginFarmer\\TC01_016.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2026-08-27T21:58:13.062Z","pid":7956,"hostname":"F","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2026-08-27T21:58:13.268Z","pid":7956,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-27T21:58:13.268Z","pid":7956,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[role=\"dialog\"] button in page."}
+{"level":30,"time":"2026-08-27T21:58:13.323Z","pid":7956,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-27T21:58:13.389Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:58:13.392Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:58:13.410Z","pid":7956,"hostname":"F","msg":"Start of node method closeBrowser"}
+{"level":30,"time":"2026-08-27T21:58:13.446Z","pid":7956,"hostname":"F","msg":"Removed page=bdf88f61-4857-49a0-b682-f9a3a53f8f46 from context=3196120d-9590-41b7-8426-ea34225d8ac7 page stack"}
+{"level":30,"time":"2026-08-27T21:58:14.038Z","pid":7956,"hostname":"F","msg":"End of node method closeBrowser"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:536:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2026-08-27T21:58:14.064Z","pid":7956,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-27T21:58:14.064Z","pid":7956,"hostname":"F","msg":"End of node method getBrowserCatalog"}

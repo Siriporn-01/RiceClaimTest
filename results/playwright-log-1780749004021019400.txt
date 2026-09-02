@@ -1,0 +1,58 @@
+{"level":30,"time":"2026-06-06T12:30:41.448Z","pid":22012,"hostname":"F","msg":"Listening on 127.0.0.1:49975"}
+{"level":30,"time":"2026-06-06T12:30:41.725Z","pid":22012,"hostname":"F","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2026-06-06T12:30:42.567Z","pid":22012,"hostname":"F","msg":"Adding browser to stack: chromium, version: 141.0.7390.37"}
+{"level":30,"time":"2026-06-06T12:30:42.568Z","pid":22012,"hostname":"F","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2026-06-06T12:30:42.569Z","pid":22012,"hostname":"F","msg":"End of node method newBrowser"}
+{"level":30,"time":"2026-06-06T12:30:42.586Z","pid":22012,"hostname":"F","msg":"Start of node method newPage"}
+{"level":30,"time":"2026-06-06T12:30:42.588Z","pid":22012,"hostname":"F","msg":"currentBrowser: {\"name\":\"chromium\",\"browser\":{\"_type\":\"Browser\",\"_guid\":\"browser@83e417771dab189c2d544903fe074464\"},\"headless\":false,\"_contextStack\":[],\"id\":\"browser=c687cad3-d1c3-4fe5-8329-e2c6e1f580ac\"}"}
+{"level":30,"time":"2026-06-06T12:30:42.625Z","pid":22012,"hostname":"F","msg":"Setting default timeout for context context=4df60a94-03c7-4ead-823c-bd678ab65589 to 10000"}
+{"level":30,"time":"2026-06-06T12:30:42.625Z","pid":22012,"hostname":"F","msg":"Changed active context: context=4df60a94-03c7-4ead-823c-bd678ab65589"}
+{"level":30,"time":"2026-06-06T12:30:42.903Z","pid":22012,"hostname":"F","msg":"Video path: undefined"}
+{"level":30,"time":"2026-06-06T12:30:42.904Z","pid":22012,"hostname":"F","msg":"Changed active page"}
+{"level":30,"time":"2026-06-06T12:30:45.849Z","pid":22012,"hostname":"F","msg":"Error of node method  newPage"}
+================= Original suppressed error =================
+page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:5173/
+Call log:
+[2m  - navigating to "http://localhost:5173/", waiting until "load"[22m
+
+    at newPage (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:13017:18)
+    at async PlaywrightServer.newPage (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:13635:28) {
+  name: 'Error'
+}
+=============================================================
+{"level":30,"time":"2026-06-06T12:30:45.864Z","pid":22012,"hostname":"F","msg":"Start of node method takeScreenshot"}
+================= Original suppressed error =================
+Error: Tried to take screenshot, but no page was open.
+    at exists (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:11096:11)
+    at takeScreenshot (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:11152:3)
+    at PlaywrightServer.takeScreenshot (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:13635:34)
+    at Object.onReceiveHalfClose (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:536:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2026-06-06T12:30:45.866Z","pid":22012,"hostname":"F","msg":"Error of node method  takeScreenshot"}
+{"level":30,"time":"2026-06-06T12:30:45.960Z","pid":22012,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-06-06T12:30:45.962Z","pid":22012,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-06-06T12:30:45.995Z","pid":22012,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-06-06T12:30:45.996Z","pid":22012,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-06-06T12:30:46.010Z","pid":22012,"hostname":"F","msg":"Start of node method closeBrowser"}
+{"level":30,"time":"2026-06-06T12:30:46.379Z","pid":22012,"hostname":"F","msg":"End of node method closeBrowser"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:536:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2026-06-06T12:30:46.399Z","pid":22012,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-06-06T12:30:46.399Z","pid":22012,"hostname":"F","msg":"End of node method getBrowserCatalog"}

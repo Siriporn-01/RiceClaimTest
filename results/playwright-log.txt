@@ -1,0 +1,298 @@
+{"level":30,"time":"2026-08-29T00:54:04.859Z","pid":24060,"hostname":"F","msg":"Listening on 127.0.0.1:63712"}
+{"level":30,"time":"2026-08-29T00:54:05.290Z","pid":24060,"hostname":"F","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2026-08-29T00:54:06.239Z","pid":24060,"hostname":"F","msg":"Adding browser to stack: chromium, version: 141.0.7390.37"}
+{"level":30,"time":"2026-08-29T00:54:06.240Z","pid":24060,"hostname":"F","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2026-08-29T00:54:06.240Z","pid":24060,"hostname":"F","msg":"End of node method newBrowser"}
+{"level":30,"time":"2026-08-29T00:54:06.258Z","pid":24060,"hostname":"F","msg":"Start of node method newContext"}
+{"level":30,"time":"2026-08-29T00:54:06.258Z","pid":24060,"hostname":"F","msg":"Creating new context with options: {\"acceptDownloads\":true,\"bypassCSP\":false,\"forcedColors\":\"none\",\"ignoreHTTPSErrors\":false,\"javaScriptEnabled\":true,\"offline\":false,\"reducedMotion\":\"no-preference\",\"serviceWorkers\":\"allow\",\"viewport\":{\"width\":1920,\"height\":1000}}"}
+{"level":30,"time":"2026-08-29T00:54:06.259Z","pid":24060,"hostname":"F","msg":"currentBrowser: {\"name\":\"chromium\",\"browser\":{\"_type\":\"Browser\",\"_guid\":\"browser@9dcc2aee5f46e242fb2d65f386b0c927\"},\"headless\":false,\"_contextStack\":[],\"id\":\"browser=bca5fda3-da8c-448e-b09c-872ed478a626\"}"}
+{"level":30,"time":"2026-08-29T00:54:06.259Z","pid":24060,"hostname":"F","msg":"Trace file: "}
+{"level":30,"time":"2026-08-29T00:54:06.300Z","pid":24060,"hostname":"F","msg":"Setting default timeout for context context=b44a4244-a503-42d2-b6ca-3196d077da6f to 10000"}
+{"level":30,"time":"2026-08-29T00:54:06.301Z","pid":24060,"hostname":"F","msg":"Changed active context: context=b44a4244-a503-42d2-b6ca-3196d077da6f"}
+{"level":30,"time":"2026-08-29T00:54:06.302Z","pid":24060,"hostname":"F","msg":"End of node method newContext"}
+{"level":30,"time":"2026-08-29T00:54:06.332Z","pid":24060,"hostname":"F","msg":"Start of node method newPage"}
+{"level":30,"time":"2026-08-29T00:54:06.333Z","pid":24060,"hostname":"F","msg":"currentBrowser: {\"name\":\"chromium\",\"browser\":{\"_type\":\"Browser\",\"_guid\":\"browser@9dcc2aee5f46e242fb2d65f386b0c927\"},\"headless\":false,\"_contextStack\":[{\"id\":\"context=b44a4244-a503-42d2-b6ca-3196d077da6f\",\"c\":{\"_type\":\"BrowserContext\",\"_guid\":\"browser-context@76bb7861493e1cc074f843bf12790cc9\"},\"pageStack\":[],\"options\":{\"acceptDownloads\":true,\"bypassCSP\":false,\"forcedColors\":\"none\",\"ignoreHTTPSErrors\":false,\"javaScriptEnabled\":true,\"offline\":false,\"reducedMotion\":\"no-preference\",\"serviceWorkers\":\"allow\",\"viewport\":{\"width\":1920,\"height\":1000}},\"traceFile\":\"\"}],\"id\":\"browser=bca5fda3-da8c-448e-b09c-872ed478a626\"}"}
+{"level":30,"time":"2026-08-29T00:54:07.160Z","pid":24060,"hostname":"F","msg":"Video path: undefined"}
+{"level":30,"time":"2026-08-29T00:54:07.160Z","pid":24060,"hostname":"F","msg":"Changed active page"}
+{"level":30,"time":"2026-08-29T00:54:07.196Z","pid":24060,"hostname":"F","msg":"End of node method newPage"}
+{"level":30,"time":"2026-08-29T00:54:07.224Z","pid":24060,"hostname":"F","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-08-29T00:54:17.273Z","pid":24060,"hostname":"F","msg":"Error of node method goTo"}
+================= Original suppressed error =================
+page.goto: Timeout 10000ms exceeded.
+Call log:
+[2m  - navigating to "http://localhost:5173/login", waiting until "load"[22m
+
+    at goTo (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:11143:31)
+    at PlaywrightServer.goTo (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:13663:34)
+    at Object.onReceiveHalfClose (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18) {
+  name: 'TimeoutError'
+}
+=============================================================
+{"level":30,"time":"2026-08-29T00:54:17.289Z","pid":24060,"hostname":"F","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2026-08-29T00:54:17.292Z","pid":24060,"hostname":"F","Take screenshot with options: ":{"path":"C:\\RiceClaimTest\\results\\browser\\screenshot\\fail-screenshot-1.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2026-08-29T00:54:27.311Z","pid":24060,"hostname":"F","msg":"Error of node method  takeScreenshot"}
+================= Original suppressed error =================
+page.screenshot: Timeout 10000ms exceeded.
+Call log:
+[2m  - taking page screenshot[22m
+[2m  - waiting for fonts to load...[22m
+
+    at takeScreenshot (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:11166:16)
+    at PlaywrightServer.takeScreenshot (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:13635:34)
+    at Object.onReceiveHalfClose (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18) {
+  name: 'TimeoutError'
+}
+=============================================================
+{"level":30,"time":"2026-08-29T00:54:32.401Z","pid":24060,"hostname":"F","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-08-29T00:54:42.464Z","pid":24060,"hostname":"F","msg":"Error of node method goTo"}
+================= Original suppressed error =================
+page.goto: Timeout 10000ms exceeded.
+Call log:
+[2m  - navigating to "http://localhost:5173/login", waiting until "load"[22m
+
+    at goTo (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:11143:31)
+    at PlaywrightServer.goTo (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:13663:34)
+    at Object.onReceiveHalfClose (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18) {
+  name: 'TimeoutError'
+}
+=============================================================
+{"level":30,"time":"2026-08-29T00:54:42.473Z","pid":24060,"hostname":"F","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2026-08-29T00:54:42.474Z","pid":24060,"hostname":"F","Take screenshot with options: ":{"path":"C:\\RiceClaimTest\\results\\browser\\screenshot\\fail-screenshot-1.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2026-08-29T00:54:44.931Z","pid":24060,"hostname":"F","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2026-08-29T00:54:49.965Z","pid":24060,"hostname":"F","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-08-29T00:54:50.427Z","pid":24060,"hostname":"F","msg":"End of node method goTo"}
+{"level":30,"time":"2026-08-29T00:54:50.441Z","pid":24060,"hostname":"F","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2026-08-29T00:54:50.442Z","pid":24060,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=body in page."}
+{"level":30,"time":"2026-08-29T00:54:50.680Z","pid":24060,"hostname":"F","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2026-08-29T00:54:50.866Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:54:50.871Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:54:50.907Z","pid":24060,"hostname":"F","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-08-29T00:54:51.321Z","pid":24060,"hostname":"F","msg":"End of node method goTo"}
+{"level":30,"time":"2026-08-29T00:54:51.354Z","pid":24060,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-29T00:54:51.355Z","pid":24060,"hostname":"F","msg":"Strict mode is enabled, find Locator with //button[contains(normalize-space(.), 'เกษตรกร')] in page."}
+{"level":30,"time":"2026-08-29T00:54:51.554Z","pid":24060,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-29T00:54:51.564Z","pid":24060,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-29T00:54:51.564Z","pid":24060,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2026-08-29T00:54:51.598Z","pid":24060,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-29T00:54:51.611Z","pid":24060,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-29T00:54:51.611Z","pid":24060,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2026-08-29T00:54:51.640Z","pid":24060,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-29T00:54:51.653Z","pid":24060,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-29T00:54:51.654Z","pid":24060,"hostname":"F","msg":"Strict mode is enabled, find Locator with //button[contains(normalize-space(.), 'เข้าสู่ระบบ')] in page."}
+{"level":30,"time":"2026-08-29T00:54:51.744Z","pid":24060,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-29T00:54:51.769Z","pid":24060,"hostname":"F","msg":"Start of node method getText"}
+{"level":30,"time":"2026-08-29T00:54:51.769Z","pid":24060,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[data-slot=\"dialog-description\"] in page."}
+================= Original suppressed error =================
+locator.elementHandle: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-slot="dialog-description"]')[22m
+
+    at getTextContent (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:12025:33)
+    at getText (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:12039:21)
+    at async PlaywrightServer.getText (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:13635:28) {
+  name: 'TimeoutError'
+}
+{"level":50,"time":"2026-08-29T00:54:53.779Z","pid":24060,"hostname":"F","err":{"type":"TimeoutError","message":"locator.elementHandle: Timeout 2000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-slot=\"dialog-description\"]')\u001b[22m\n","stack":"locator.elementHandle: Timeout 2000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-slot=\"dialog-description\"]')\u001b[22m\n\n    at getTextContent (C:\\Users\\fexrn\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\Browser\\wrapper\\index.js:12025:33)\n    at getText (C:\\Users\\fexrn\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\Browser\\wrapper\\index.js:12039:21)\n    at async PlaywrightServer.getText (C:\\Users\\fexrn\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\Browser\\wrapper\\index.js:13635:28)","name":"TimeoutError"},"msg":"locator.elementHandle: Timeout 2000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-slot=\"dialog-description\"]')\u001b[22m\n"}
+=============================================================
+{"level":30,"time":"2026-08-29T00:54:53.780Z","pid":24060,"hostname":"F","msg":"Error of node method  getText"}
+{"level":30,"time":"2026-08-29T00:54:53.789Z","pid":24060,"hostname":"F","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2026-08-29T00:54:53.789Z","pid":24060,"hostname":"F","Take screenshot with options: ":{"path":"C:\\RiceClaimTest\\results\\browser\\screenshot\\fail-screenshot-2.png","fileType":"png","fullPage":false,"timeout":2000,"omitBackground":false}}
+{"level":30,"time":"2026-08-29T00:54:54.599Z","pid":24060,"hostname":"F","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2026-08-29T00:54:54.680Z","pid":24060,"hostname":"F","msg":"Start of node method getElements"}
+{"level":30,"time":"2026-08-29T00:54:54.680Z","pid":24060,"hostname":"F","msg":"Strict mode is disabled, return Locator: css=[data-slot=\"form-message\"] in page."}
+{"level":30,"time":"2026-08-29T00:54:54.681Z","pid":24060,"hostname":"F","msg":"Wait element to reach attached state."}
+{"level":30,"time":"2026-08-29T00:54:56.692Z","pid":24060,"hostname":"F","msg":"Found 0 elements."}
+{"level":30,"time":"2026-08-29T00:54:56.692Z","pid":24060,"hostname":"F","msg":"End of node method getElements"}
+{"level":30,"time":"2026-08-29T00:54:56.740Z","pid":24060,"hostname":"F","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2026-08-29T00:54:56.740Z","pid":24060,"hostname":"F","Take screenshot with options: ":{"path":"C:\\RiceClaimTest\\results\\Screens\\LoginFarmer\\TC01_001.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2026-08-29T00:54:57.871Z","pid":24060,"hostname":"F","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2026-08-29T00:54:58.061Z","pid":24060,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-29T00:54:58.061Z","pid":24060,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[role=\"dialog\"] button in page."}
+{"level":30,"time":"2026-08-29T00:54:58.120Z","pid":24060,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-29T00:54:58.136Z","pid":24060,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-29T00:54:58.136Z","pid":24060,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=nav button:last-of-type in page."}
+{"level":30,"time":"2026-08-29T00:55:08.157Z","pid":24060,"hostname":"F","msg":"Error of node method  click"}
+================= Original suppressed error =================
+locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('nav button:last-of-type')[22m
+[2m    - locator resolved to <button type="button" data-state="closed" aria-expanded="false" aria-haspopup="dialog" data-slot="sheet-trigger" aria-controls="radix-«r0»">…</button>[22m
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is not visible[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is not visible[22m
+[2m    - retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m    19 × waiting for element to be visible, enabled and stable[22m
+[2m       - element is not visible[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+
+    at internalClick (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:12341:19)
+    at async click (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:12322:18)
+    at async PlaywrightServer.click (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:13635:28) {
+  name: 'TimeoutError'
+}
+=============================================================
+{"level":30,"time":"2026-08-29T00:55:08.163Z","pid":24060,"hostname":"F","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2026-08-29T00:55:08.163Z","pid":24060,"hostname":"F","Take screenshot with options: ":{"path":"C:\\RiceClaimTest\\results\\browser\\screenshot\\fail-screenshot-3.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2026-08-29T00:55:09.325Z","pid":24060,"hostname":"F","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2026-08-29T00:55:10.377Z","pid":24060,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-29T00:55:10.377Z","pid":24060,"hostname":"F","msg":"Strict mode is enabled, find Locator with //a[contains(normalize-space(.), 'ออกจากระบบ')] in page."}
+{"level":30,"time":"2026-08-29T00:55:20.380Z","pid":24060,"hostname":"F","msg":"Error of node method  click"}
+================= Original suppressed error =================
+locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('//a[contains(normalize-space(.), \'ออกจากระบบ\')]')[22m
+
+    at internalClick (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:12341:19)
+    at async click (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:12322:18)
+    at async PlaywrightServer.click (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:13635:28) {
+  name: 'TimeoutError'
+}
+=============================================================
+{"level":30,"time":"2026-08-29T00:55:20.385Z","pid":24060,"hostname":"F","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2026-08-29T00:55:20.385Z","pid":24060,"hostname":"F","Take screenshot with options: ":{"path":"C:\\RiceClaimTest\\results\\browser\\screenshot\\fail-screenshot-4.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2026-08-29T00:55:21.438Z","pid":24060,"hostname":"F","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2026-08-29T00:55:22.463Z","pid":24060,"hostname":"F","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-08-29T00:55:22.894Z","pid":24060,"hostname":"F","msg":"End of node method goTo"}
+{"level":30,"time":"2026-08-29T00:55:22.918Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:23.009Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:23.093Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:23.097Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:23.121Z","pid":24060,"hostname":"F","msg":"Start of node method goTo"}
+{"level":30,"time":"2026-08-29T00:55:23.442Z","pid":24060,"hostname":"F","msg":"End of node method goTo"}
+{"level":30,"time":"2026-08-29T00:55:23.468Z","pid":24060,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-29T00:55:23.468Z","pid":24060,"hostname":"F","msg":"Strict mode is enabled, find Locator with //button[contains(normalize-space(.), 'เกษตรกร')] in page."}
+{"level":30,"time":"2026-08-29T00:55:23.612Z","pid":24060,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-29T00:55:23.621Z","pid":24060,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-29T00:55:23.621Z","pid":24060,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2026-08-29T00:55:23.642Z","pid":24060,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-29T00:55:23.654Z","pid":24060,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-08-29T00:55:23.654Z","pid":24060,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2026-08-29T00:55:23.679Z","pid":24060,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-08-29T00:55:23.692Z","pid":24060,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-29T00:55:23.692Z","pid":24060,"hostname":"F","msg":"Strict mode is enabled, find Locator with //button[contains(normalize-space(.), 'เข้าสู่ระบบ')] in page."}
+{"level":30,"time":"2026-08-29T00:55:23.752Z","pid":24060,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-08-29T00:55:23.777Z","pid":24060,"hostname":"F","msg":"Start of node method getText"}
+{"level":30,"time":"2026-08-29T00:55:23.777Z","pid":24060,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[data-slot=\"dialog-description\"] in page."}
+{"level":50,"time":"2026-08-29T00:55:25.786Z","pid":24060,"hostname":"F","err":{"type":"TimeoutError","message":"locator.elementHandle: Timeout 2000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-slot=\"dialog-description\"]')\u001b[22m\n","stack":"locator.elementHandle: Timeout 2000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-slot=\"dialog-description\"]')\u001b[22m\n\n    at getTextContent (C:\\Users\\fexrn\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\Browser\\wrapper\\index.js:12025:33)\n    at getText (C:\\Users\\fexrn\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\Browser\\wrapper\\index.js:12039:21)\n    at async PlaywrightServer.getText (C:\\Users\\fexrn\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\Browser\\wrapper\\index.js:13635:28)","name":"TimeoutError"},"msg":"locator.elementHandle: Timeout 2000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-slot=\"dialog-description\"]')\u001b[22m\n"}
+================= Original suppressed error =================
+locator.elementHandle: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-slot="dialog-description"]')[22m
+
+    at getTextContent (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:12025:33)
+    at getText (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:12039:21)
+    at async PlaywrightServer.getText (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:13635:28) {
+  name: 'TimeoutError'
+}
+=============================================================
+{"level":30,"time":"2026-08-29T00:55:25.787Z","pid":24060,"hostname":"F","msg":"Error of node method  getText"}
+{"level":30,"time":"2026-08-29T00:55:25.794Z","pid":24060,"hostname":"F","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2026-08-29T00:55:25.795Z","pid":24060,"hostname":"F","Take screenshot with options: ":{"path":"C:\\RiceClaimTest\\results\\browser\\screenshot\\fail-screenshot-5.png","fileType":"png","fullPage":false,"timeout":2000,"omitBackground":false}}
+{"level":30,"time":"2026-08-29T00:55:26.247Z","pid":24060,"hostname":"F","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2026-08-29T00:55:26.276Z","pid":24060,"hostname":"F","msg":"Start of node method getElements"}
+{"level":30,"time":"2026-08-29T00:55:26.276Z","pid":24060,"hostname":"F","msg":"Strict mode is disabled, return Locator: css=[data-slot=\"form-message\"] in page."}
+{"level":30,"time":"2026-08-29T00:55:26.276Z","pid":24060,"hostname":"F","msg":"Wait element to reach attached state."}
+{"level":30,"time":"2026-08-29T00:55:28.281Z","pid":24060,"hostname":"F","msg":"Found 0 elements."}
+{"level":30,"time":"2026-08-29T00:55:28.281Z","pid":24060,"hostname":"F","msg":"End of node method getElements"}
+{"level":30,"time":"2026-08-29T00:55:28.319Z","pid":24060,"hostname":"F","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2026-08-29T00:55:28.319Z","pid":24060,"hostname":"F","Take screenshot with options: ":{"path":"C:\\RiceClaimTest\\results\\Screens\\LoginFarmer\\TC01_002.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2026-08-29T00:55:29.320Z","pid":24060,"hostname":"F","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2026-08-29T00:55:29.498Z","pid":24060,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-08-29T00:55:29.498Z","pid":24060,"hostname":"F","msg":"Strict mode is enabled, find Locator with css=[role=\"dialog\"] button in page."}
+{"level":30,"time":"2026-08-29T00:55:39.503Z","pid":24060,"hostname":"F","msg":"Error of node method  click"}
+================= Original suppressed error =================
+locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('[role="dialog"] button')[22m
+
+    at internalClick (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:12341:19)
+    at async click (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:12322:18)
+    at async PlaywrightServer.click (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:13635:28) {
+  name: 'TimeoutError'
+}
+=============================================================
+{"level":30,"time":"2026-08-29T00:55:39.510Z","pid":24060,"hostname":"F","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2026-08-29T00:55:39.510Z","pid":24060,"hostname":"F","Take screenshot with options: ":{"path":"C:\\RiceClaimTest\\results\\browser\\screenshot\\fail-screenshot-6.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2026-08-29T00:55:40.531Z","pid":24060,"hostname":"F","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2026-08-29T00:55:40.592Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:40.595Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:40.652Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:40.654Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:40.706Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:40.708Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:40.760Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:40.763Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:40.803Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:40.805Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:40.827Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:40.829Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:40.870Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:40.872Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:40.900Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:40.902Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:40.947Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:40.949Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:40.961Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:40.963Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.004Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.006Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.029Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.031Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.075Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.076Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.088Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.090Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.142Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.146Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.251Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.254Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.305Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.308Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.324Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.327Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.398Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.400Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.410Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.413Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.460Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.463Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.507Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.509Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.547Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.549Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.565Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.567Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.630Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.632Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.676Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.679Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.722Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.724Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.763Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.765Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.808Z","pid":24060,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.810Z","pid":24060,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-08-29T00:55:41.820Z","pid":24060,"hostname":"F","msg":"Start of node method closeBrowser"}
+{"level":30,"time":"2026-08-29T00:55:41.837Z","pid":24060,"hostname":"F","msg":"Removed page=ae72321f-b8d8-4994-b41c-6b8bc7ae45a7 from context=b44a4244-a503-42d2-b6ca-3196d077da6f page stack"}
+{"level":30,"time":"2026-08-29T00:55:42.240Z","pid":24060,"hostname":"F","msg":"End of node method closeBrowser"}
+{"level":30,"time":"2026-08-29T00:55:42.249Z","pid":24060,"hostname":"F","msg":"Start of node method closeAllBrowsers"}
+{"level":30,"time":"2026-08-29T00:55:42.249Z","pid":24060,"hostname":"F","msg":"End of node method closeAllBrowsers"}
+{"level":30,"time":"2026-08-29T00:55:42.258Z","pid":24060,"hostname":"F","msg":"Start of node method closeBrowser"}
+{"level":30,"time":"2026-08-29T00:55:42.258Z","pid":24060,"hostname":"F","msg":"End of node method closeBrowser"}
+{"level":30,"time":"2026-08-29T00:55:42.266Z","pid":24060,"hostname":"F","msg":"Start of node method closeAllBrowsers"}
+{"level":30,"time":"2026-08-29T00:55:42.266Z","pid":24060,"hostname":"F","msg":"End of node method closeAllBrowsers"}

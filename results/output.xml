@@ -1,0 +1,4420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.12.10 on win32)" generated="2026-08-29T07:53:51.346795" rpa="false" schemaversion="5">
+<suite id="s1" name="RiceClaimTest" source="C:\RiceClaimTest">
+<suite id="s1-s1" name="Tests" source="C:\RiceClaimTest\Tests">
+<suite id="s1-s1-s1" name="TC01 LoginFarmer" source="C:\RiceClaimTest\Tests\TC01_LoginFarmer.robot">
+<kw name="Run Keywords" owner="BuiltIn" type="SETUP">
+<kw name="Start Application" owner="CommonKeyword">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2026-08-29T07:53:52.441823" level="INFO">Running command 'taskkill /F /IM java.exe /T 2&gt;&amp;1'.</msg>
+<arg>taskkill /F /IM java.exe /T</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2026-08-29T07:53:52.425817" elapsed="0.482319"/>
+</kw>
+<arg>Run</arg>
+<arg>taskkill /F /IM java.exe /T</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-08-29T07:53:52.424818" elapsed="0.484321"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2026-08-29T07:53:52.931215" level="INFO">Running command 'taskkill /F /IM node.exe /T 2&gt;&amp;1'.</msg>
+<arg>taskkill /F /IM node.exe /T</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2026-08-29T07:53:52.910136" elapsed="0.606267"/>
+</kw>
+<arg>Run</arg>
+<arg>taskkill /F /IM node.exe /T</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-08-29T07:53:52.909139" elapsed="0.607777"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-08-29T07:53:56.518320" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-08-29T07:53:53.516916" elapsed="3.001915"/>
+</kw>
+<kw name="Start Process" owner="Process">
+<msg time="2026-08-29T07:53:56.522368" level="INFO">Starting process:
+cmd /c "mvnw.cmd spring-boot:run"</msg>
+<msg time="2026-08-29T07:53:56.540968" level="INFO">${backend} = &lt;Popen: returncode: None args: ['cmd', '/c', 'mvnw.cmd spring-boot:run']&gt;</msg>
+<var>${backend}</var>
+<arg>cmd</arg>
+<arg>/c</arg>
+<arg>mvnw.cmd spring-boot:run</arg>
+<arg>cwd=${BACKEND_PATH}</arg>
+<arg>stdout=${BACKEND_PATH}/backend.log</arg>
+<arg>stderr=${BACKEND_PATH}/backend_err.log</arg>
+<doc>Starts a new process on background.</doc>
+<status status="PASS" start="2026-08-29T07:53:56.519844" elapsed="0.021124"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-08-29T07:53:56.543972" level="INFO">${BACKEND_PROCESS} = &lt;Popen: returncode: None args: ['cmd', '/c', 'mvnw.cmd spring-boot:run']&gt;</msg>
+<arg>${BACKEND_PROCESS}</arg>
+<arg>${backend}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-08-29T07:53:56.541969" elapsed="0.002003"/>
+</kw>
+<kw name="Start Process" owner="Process">
+<msg time="2026-08-29T07:53:56.546973" level="INFO">Starting process:
+npm run dev</msg>
+<msg time="2026-08-29T07:53:56.563968" level="INFO">${frontend} = &lt;Popen: returncode: None args: 'npm run dev'&gt;</msg>
+<var>${frontend}</var>
+<arg>npm</arg>
+<arg>run</arg>
+<arg>dev</arg>
+<arg>cwd=${FRONTEND_PATH}</arg>
+<arg>shell=True</arg>
+<arg>stdout=${FRONTEND_PATH}/frontend.log</arg>
+<arg>stderr=${FRONTEND_PATH}/frontend_err.log</arg>
+<doc>Starts a new process on background.</doc>
+<status status="PASS" start="2026-08-29T07:53:56.544972" elapsed="0.018996"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-08-29T07:53:56.565970" level="INFO">${FRONTEND_PROCESS} = &lt;Popen: returncode: None args: 'npm run dev'&gt;</msg>
+<arg>${FRONTEND_PROCESS}</arg>
+<arg>${frontend}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-08-29T07:53:56.564969" elapsed="0.001999"/>
+</kw>
+<kw name="Wait Until Backend Is Ready" owner="CommonKeyword">
+<for flavor="IN RANGE">
+<iter>
+<kw name="Run" owner="OperatingSystem">
+<msg time="2026-08-29T07:53:56.590556" level="INFO">Running command 'netstat -ano | findstr :8080 2&gt;&amp;1'.</msg>
+<msg time="2026-08-29T07:53:56.713114" level="INFO">${result} =   TCP    0.0.0.0:8080           0.0.0.0:0              LISTENING       5748
+  TCP    [::]:8080              [::]:0                 LISTENING       5748</msg>
+<var>${result}</var>
+<arg>netstat -ano | findstr :8080</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2026-08-29T07:53:56.571966" elapsed="0.142150"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-08-29T07:53:56.716112" level="INFO">${is_ready} = True</msg>
+<var>${is_ready}</var>
+<arg>len($result.strip()) &gt; 0</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-08-29T07:53:56.715116" elapsed="0.001999"/>
+</kw>
+<if>
+<branch type="IF" condition="$is_ready">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-08-29T07:53:56.719116" level="INFO">Backend is ready!</msg>
+<arg>Backend is ready!</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-08-29T07:53:56.718118" elapsed="0.002000"/>
+</kw>
+<return>
+<status status="PASS" start="2026-08-29T07:53:56.720118" elapsed="0.001001"/>
+</return>
+<status status="PASS" start="2026-08-29T07:53:56.717115" elapsed="0.004004"/>
+</branch>
+<status status="PASS" start="2026-08-29T07:53:56.717115" elapsed="0.004004"/>
+</if>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-08-29T07:53:56.722200" elapsed="0.000000"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2026-08-29T07:53:56.570967" elapsed="0.152233"/>
+</iter>
+<var>${i}</var>
+<value>30</value>
+<status status="PASS" start="2026-08-29T07:53:56.569971" elapsed="0.153229"/>
+</for>
+<kw name="Fatal Error" owner="BuiltIn">
+<arg>Backend failed to start within 60s</arg>
+<doc>Stops the whole test execution.</doc>
+<status status="NOT RUN" start="2026-08-29T07:53:56.723200" elapsed="0.001006"/>
+</kw>
+<status status="PASS" start="2026-08-29T07:53:56.567969" elapsed="0.156237"/>
+</kw>
+<kw name="Wait Until Frontend Is Ready" owner="CommonKeyword">
+<for flavor="IN RANGE">
+<iter>
+<kw name="Run" owner="OperatingSystem">
+<msg time="2026-08-29T07:53:56.749200" level="INFO">Running command 'netstat -ano | findstr :5173 2&gt;&amp;1'.</msg>
+<msg time="2026-08-29T07:53:56.877881" level="INFO">${result} =   TCP    [::1]:5173             [::1]:49261            TIME_WAIT       0
+  TCP    [::1]:5173             [::1]:49798            TIME_WAIT       0
+  TCP    [::1]:5173             [::1]:53614           ...</msg>
+<var>${result}</var>
+<arg>netstat -ano | findstr :5173</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2026-08-29T07:53:56.728203" elapsed="0.150678"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-08-29T07:53:56.880879" level="INFO">${is_ready} = True</msg>
+<var>${is_ready}</var>
+<arg>len($result.strip()) &gt; 0</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-08-29T07:53:56.878881" elapsed="0.003001"/>
+</kw>
+<if>
+<branch type="IF" condition="$is_ready">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-08-29T07:53:56.884881" level="INFO">Frontend is ready!</msg>
+<arg>Frontend is ready!</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-08-29T07:53:56.883882" elapsed="0.000999"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-08-29T07:54:01.887203" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-08-29T07:53:56.885881" elapsed="5.002334"/>
+</kw>
+<return>
+<status status="PASS" start="2026-08-29T07:54:01.888215" elapsed="0.001002"/>
+</return>
+<status status="PASS" start="2026-08-29T07:53:56.881882" elapsed="5.007335"/>
+</branch>
+<status status="PASS" start="2026-08-29T07:53:56.881882" elapsed="5.008334"/>
+</if>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-08-29T07:54:01.890216" elapsed="0.001001"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2026-08-29T07:53:56.727202" elapsed="5.164015"/>
+</iter>
+<var>${i}</var>
+<value>20</value>
+<status status="PASS" start="2026-08-29T07:53:56.726201" elapsed="5.165016"/>
+</for>
+<kw name="Fatal Error" owner="BuiltIn">
+<arg>Frontend failed to start within 40s</arg>
+<doc>Stops the whole test execution.</doc>
+<status status="NOT RUN" start="2026-08-29T07:54:01.892218" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-08-29T07:53:56.725203" elapsed="5.168016"/>
+</kw>
+<status status="PASS" start="2026-08-29T07:53:52.424818" elapsed="9.468401"/>
+</kw>
+<kw name="Open Application Browser" owner="CommonKeyword">
+<kw name="New Browser" owner="Browser">
+<msg time="2026-08-29T07:54:01.898217" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\RiceClaimTest\\results\\browser\\traces\\temp\\f4dda99b-f72e-454b-ac8c-a45539e6302e"}</msg>
+<msg time="2026-08-29T07:54:02.000758" level="INFO">Starting Browser process C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:63712</msg>
+<msg time="2026-08-29T07:54:06.244780" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\RiceClaimTest\\results\\browser\\traces\\temp\\f4dda99b-f72e-454b-ac8c-a45539e6302e"}</msg>
+<arg>browser=${BROWSER}</arg>
+<arg>headless=${HEADLESS}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2026-08-29T07:54:01.896216" elapsed="4.350565"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<msg time="2026-08-29T07:54:06.250781" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1920,
+    "height": 1000
+  }
+}</msg>
+<msg time="2026-08-29T07:54:06.310781" level="INFO">Successfully created context. </msg>
+<msg time="2026-08-29T07:54:06.311780" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1920, 'height': 1000}}</msg>
+<arg>viewport={"width": 1920, "height": 1000}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2026-08-29T07:54:06.247781" elapsed="0.066000"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2026-08-29T07:54:07.203361" level="INFO">Successfully initialized new page object and opened url: about:blank</msg>
+<arg>about:blank</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2026-08-29T07:54:06.314782" elapsed="0.891577"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Go To Page" owner="CommonKeyword">
+<kw name="Go To" owner="Browser">
+<msg time="2026-08-29T07:54:27.314733" level="INFO">Keyword 'Take Screenshot  fail-screenshot-{index}' could not be run on failure:
+TimeoutError: page.screenshot: Timeout 10000ms exceeded.
+Call log:
+[2m  - taking page screenshot[22m
+[2m  - waiting for fonts to load...[22m
+</msg>
+<msg time="2026-08-29T07:54:27.315328" level="INFO">See also file:///C:/RiceClaimTest/results/playwright-log.txt for additional details.</msg>
+<msg time="2026-08-29T07:54:27.316540" level="FAIL">TimeoutError: page.goto: Timeout 10000ms exceeded.
+Call log:
+  - navigating to "http://localhost:5173/login", waiting until "load"
+</msg>
+<arg>${url}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="FAIL" start="2026-08-29T07:54:07.211360" elapsed="20.128972">TimeoutError: page.goto: Timeout 10000ms exceeded.
+Call log:
+  - navigating to "http://localhost:5173/login", waiting until "load"
+</status>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<arg>css=body</arg>
+<arg>visible</arg>
+<arg>timeout=10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2026-08-29T07:54:27.341349" elapsed="0.000544"/>
+</kw>
+<arg>${url}</arg>
+<status status="FAIL" start="2026-08-29T07:54:07.209360" elapsed="20.133045">TimeoutError: page.goto: Timeout 10000ms exceeded.
+Call log:
+  - navigating to "http://localhost:5173/login", waiting until "load"
+</status>
+</kw>
+<kw name="Go To Page" owner="CommonKeyword">
+<kw name="Go To" owner="Browser">
+<msg time="2026-08-29T07:54:44.934033" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-29T07:54:44.936066" level="INFO">See also file:///C:/RiceClaimTest/results/playwright-log.txt for additional details.</msg>
+<msg time="2026-08-29T07:54:44.936066" level="FAIL">TimeoutError: page.goto: Timeout 10000ms exceeded.
+Call log:
+  - navigating to "http://localhost:5173/login", waiting until "load"
+</msg>
+<arg>${url}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="FAIL" start="2026-08-29T07:54:32.360641" elapsed="12.591612">TimeoutError: page.goto: Timeout 10000ms exceeded.
+Call log:
+  - navigating to "http://localhost:5173/login", waiting until "load"
+</status>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<arg>css=body</arg>
+<arg>visible</arg>
+<arg>timeout=10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2026-08-29T07:54:44.953595" elapsed="0.001224"/>
+</kw>
+<arg>${url}</arg>
+<status status="FAIL" start="2026-08-29T07:54:32.355627" elapsed="12.599705">TimeoutError: page.goto: Timeout 10000ms exceeded.
+Call log:
+  - navigating to "http://localhost:5173/login", waiting until "load"
+</status>
+</kw>
+<kw name="Go To Page" owner="CommonKeyword">
+<kw name="Go To" owner="Browser">
+<msg time="2026-08-29T07:54:50.431320" level="INFO">Successfully opened URL http://localhost:5173/login</msg>
+<arg>${url}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2026-08-29T07:54:49.958086" elapsed="0.474234"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-08-29T07:54:50.683313" level="INFO">Waited for Element with selector css=body at state visible</msg>
+<arg>css=body</arg>
+<arg>visible</arg>
+<arg>timeout=10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-08-29T07:54:50.433323" elapsed="0.250988"/>
+</kw>
+<arg>${url}</arg>
+<status status="PASS" start="2026-08-29T07:54:49.957076" elapsed="0.728237"/>
+</kw>
+<arg>10x</arg>
+<arg>5s</arg>
+<arg>Go To Page</arg>
+<arg>${url}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-08-29T07:54:07.207361" elapsed="43.477952"/>
+</kw>
+<arg>${LOGIN_URL}</arg>
+<status status="PASS" start="2026-08-29T07:54:01.894218" elapsed="48.792095"/>
+</kw>
+<kw name="Open Excel Document" owner="ExcelLibrary">
+<arg>${EXCEL_PATH}</arg>
+<arg>doc_id=FarmerLogin</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" start="2026-08-29T07:54:50.686313" elapsed="0.161287"/>
+</kw>
+<arg>Start Application</arg>
+<arg>AND</arg>
+<arg>Open Application Browser</arg>
+<arg>${LOGIN_URL}</arg>
+<arg>AND</arg>
+<arg>Open Excel Document</arg>
+<arg>${EXCEL_PATH}</arg>
+<arg>doc_id=FarmerLogin</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-08-29T07:53:52.422819" elapsed="58.424781"/>
+</kw>
+<test id="s1-s1-s1-t1" name="TC01_001" line="24">
+<kw name="Farmer Login Template">
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2026-08-29T07:54:50.878420" level="INFO">${run_status} = YES </msg>
+<var>${run_status}</var>
+<arg>${row}</arg>
+<arg>1</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2026-08-29T07:54:50.876908" elapsed="0.002527"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-08-29T07:54:50.880437" level="INFO">${run_status} = YES </msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-08-29T07:54:50.879435" elapsed="0.001997"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-08-29T07:54:50.883437" level="INFO">${run_status} = YES</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-08-29T07:54:50.882435" elapsed="0.002001"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-08-29T07:54:50.886474" level="INFO">${is_skip} = False</msg>
+<var>${is_skip}</var>
+<arg>'${run_status}'.lower() == 'no'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-08-29T07:54:50.884948" elapsed="0.003836"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_skip}</arg>
+<arg>Pass Execution</arg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-29T07:54:50.889388" elapsed="0.002017"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2026-08-29T07:54:50.893402" level="INFO">${testcase_id} = TC01_001</msg>
+<var>${testcase_id}</var>
+<arg>${row}</arg>
+<arg>2</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2026-08-29T07:54:50.891405" elapsed="0.003576"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-08-29T07:54:50.898733" level="INFO">${testcase_id} = TC01_001</msg>
+<var>${testcase_id}</var>
+<arg>${testcase_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-08-29T07:54:50.895813" elapsed="0.002920"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<msg time="2026-08-29T07:54:51.323674" level="INFO">Successfully opened URL http://localhost:5173/login</msg>
+<arg>${LOGIN_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2026-08-29T07:54:50.900260" elapsed="0.424417"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2026-08-29T07:54:51.326675" level="INFO">${farmer_id} = 007412801822</msg>
+<var>${farmer_id}</var>
+<arg>${row}</arg>
+<arg>4</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2026-08-29T07:54:51.325676" elapsed="0.002001"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2026-08-29T07:54:51.329674" level="INFO">${password} = Farmer2004</msg>
+<var>${password}</var>
+<arg>${row}</arg>
+<arg>5</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2026-08-29T07:54:51.328675" elapsed="0.002002"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2026-08-29T07:54:51.332673" level="INFO">${expected} = เข้าสู่ระบบสำเร็จ</msg>
+<var>${expected}</var>
+<arg>${row}</arg>
+<arg>6</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2026-08-29T07:54:51.331677" elapsed="0.001996"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-08-29T07:54:51.335674" level="INFO">${farmer_id} = 007412801822</msg>
+<var>${farmer_id}</var>
+<arg>${farmer_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-08-29T07:54:51.334677" elapsed="0.000997"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-08-29T07:54:51.338264" level="INFO">${password} = Farmer2004</msg>
+<var>${password}</var>
+<arg>${password}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-08-29T07:54:51.336675" elapsed="0.002144"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-08-29T07:54:51.340837" level="INFO">${expected} = เข้าสู่ระบบสำเร็จ</msg>
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-08-29T07:54:51.338819" elapsed="0.003016"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-08-29T07:54:51.344569" level="INFO">${expected} = เข้าสู่ระบบสำเร็จ</msg>
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-08-29T07:54:51.342835" elapsed="0.001734"/>
+</kw>
+<kw name="Fill Farmer Login Form" owner="KeywordLoginFarmer">
+<kw name="Click" owner="Browser">
+<msg time="2026-08-29T07:54:51.349716" level="INFO">Clicks the element '//button[contains(normalize-space(.), 'เกษตรกร')]'.</msg>
+<arg>${TAB_FARMER}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-08-29T07:54:51.347459" elapsed="0.209272"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-08-29T07:54:51.559729" level="INFO">Fills the text '007412801822' in the given field.</msg>
+<arg>${TXT_USERNAME}</arg>
+<arg>${farmer_id}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-08-29T07:54:51.557731" elapsed="0.042896"/>
+</kw>
+<arg>'${farmer_id}' != 'None' and '${farmer_id}' != ''</arg>
+<arg>Fill Text</arg>
+<arg>${TXT_USERNAME}</arg>
+<arg>${farmer_id}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-29T07:54:51.556731" elapsed="0.043896"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-08-29T07:54:51.606191" level="INFO">Fills the text 'Farmer2004' in the given field.</msg>
+<arg>${TXT_PASSWORD}</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-08-29T07:54:51.603168" elapsed="0.039002"/>
+</kw>
+<arg>'${password}' != 'None' and '${password}' != ''</arg>
+<arg>Fill Text</arg>
+<arg>${TXT_PASSWORD}</arg>
+<arg>${password}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-29T07:54:51.601642" elapsed="0.041526"/>
+</kw>
+<arg>${farmer_id}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2026-08-29T07:54:51.345581" elapsed="0.297587"/>
+</kw>
+<kw name="Submit Login" owner="KeywordLoginFarmer">
+<kw name="Click" owner="Browser">
+<msg time="2026-08-29T07:54:51.648169" level="INFO">Clicks the element '//button[contains(normalize-space(.), 'เข้าสู่ระบบ')]'.</msg>
+<arg>${BTN_LOGIN}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-08-29T07:54:51.646166" elapsed="0.100673"/>
+</kw>
+<status status="PASS" start="2026-08-29T07:54:51.644172" elapsed="0.102667"/>
+</kw>
+<kw name="Get Actual Login Message" owner="KeywordLoginFarmer">
+<kw name="Set Browser Timeout" owner="Browser">
+<msg time="2026-08-29T07:54:51.758843" level="INFO">${old_timeout} = 10 seconds</msg>
+<var>${old_timeout}</var>
+<arg>2s</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" start="2026-08-29T07:54:51.749841" elapsed="0.010000"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Get Text" owner="Browser">
+<msg time="2026-08-29T07:54:54.601547" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-2.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-2.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-29T07:54:54.603548" level="INFO">See also file:///C:/RiceClaimTest/results/playwright-log.txt for additional details.</msg>
+<msg time="2026-08-29T07:54:54.605543" level="FAIL">TimeoutError: locator.elementHandle: Timeout 2000ms exceeded.
+Call log:
+  - waiting for locator('[data-slot="dialog-description"]')
+</msg>
+<arg>${DIALOG_DESCRIPTION}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="FAIL" start="2026-08-29T07:54:51.761843" elapsed="2.887703">TimeoutError: locator.elementHandle: Timeout 2000ms exceeded.
+Call log:
+  - waiting for locator('[data-slot="dialog-description"]')
+</status>
+</kw>
+<msg time="2026-08-29T07:54:54.649546" level="INFO">${dialog_status} = FAIL</msg>
+<msg time="2026-08-29T07:54:54.650543" level="INFO">${dialog_value} = TimeoutError: locator.elementHandle: Timeout 2000ms exceeded.
+Call log:
+  - waiting for locator('[data-slot="dialog-description"]')
+</msg>
+<var>${dialog_status}</var>
+<var>${dialog_value}</var>
+<arg>Get Text</arg>
+<arg>${DIALOG_DESCRIPTION}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-08-29T07:54:51.760839" elapsed="2.893704"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2026-08-29T07:54:54.656542" level="INFO">${dialog_text} = </msg>
+<var>${dialog_text}</var>
+<arg>'${dialog_status}' == 'PASS'</arg>
+<arg>${dialog_value}</arg>
+<arg>${EMPTY}</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2026-08-29T07:54:54.655545" elapsed="0.006000"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Get Form Error Messages" owner="KeywordLoginFarmer">
+<kw name="Get Elements" owner="Browser">
+<msg time="2026-08-29T07:54:56.693027" level="INFO">Found  Locators successfully.</msg>
+<msg time="2026-08-29T07:54:56.695029" level="INFO">${elements} = []</msg>
+<var>${elements}</var>
+<arg>${FORM_MESSAGE}</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for all matched elements by ``selector``.</doc>
+<status status="PASS" start="2026-08-29T07:54:54.672557" elapsed="2.022472"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-08-29T07:54:56.697030" level="INFO">${texts} = []</msg>
+<var>${texts}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-08-29T07:54:56.696029" elapsed="0.001001"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Element States" owner="Browser">
+<var>${is_visible}</var>
+<arg>${el}</arg>
+<arg>contains</arg>
+<arg>visible</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-08-29T07:54:56.700028" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_visible}">
+<kw name="Get Text" owner="Browser">
+<var>${txt}</var>
+<arg>${el}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-08-29T07:54:56.702025" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="$txt != ''">
+<kw name="Append To List" owner="Collections">
+<arg>${texts}</arg>
+<arg>${txt}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2026-08-29T07:54:56.703026" elapsed="0.000998"/>
+</kw>
+<status status="NOT RUN" start="2026-08-29T07:54:56.702025" elapsed="0.001999"/>
+</branch>
+<status status="NOT RUN" start="2026-08-29T07:54:56.702025" elapsed="0.001999"/>
+</if>
+<status status="NOT RUN" start="2026-08-29T07:54:56.701026" elapsed="0.002998"/>
+</branch>
+<status status="NOT RUN" start="2026-08-29T07:54:56.701026" elapsed="0.002998"/>
+</if>
+<var name="${el}"/>
+<status status="NOT RUN" start="2026-08-29T07:54:56.699027" elapsed="0.004997"/>
+</iter>
+<var>${el}</var>
+<value>@{elements}</value>
+<status status="NOT RUN" start="2026-08-29T07:54:56.698028" elapsed="0.007003"/>
+</for>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2026-08-29T07:54:56.706027" level="INFO">${joined} = </msg>
+<var>${joined}</var>
+<arg>SEPARATOR=${SPACE}</arg>
+<arg>@{texts}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2026-08-29T07:54:56.705031" elapsed="0.001994"/>
+</kw>
+<return>
+<value>${joined}</value>
+<status status="PASS" start="2026-08-29T07:54:56.707025" elapsed="0.001001"/>
+</return>
+<status status="PASS" start="2026-08-29T07:54:54.666544" elapsed="2.041482"/>
+</kw>
+<msg time="2026-08-29T07:54:56.708026" level="INFO">${form_status} = PASS</msg>
+<msg time="2026-08-29T07:54:56.709027" level="INFO">${form_value} = </msg>
+<var>${form_status}</var>
+<var>${form_value}</var>
+<arg>Get Form Error Messages</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-08-29T07:54:54.663545" elapsed="2.046480"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2026-08-29T07:54:56.712032" level="INFO">${form_text} = </msg>
+<var>${form_text}</var>
+<arg>'${form_status}' == 'PASS'</arg>
+<arg>${form_value}</arg>
+<arg>${EMPTY}</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2026-08-29T07:54:56.710025" elapsed="0.003002"/>
+</kw>
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>${old_timeout}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" start="2026-08-29T07:54:56.713027" elapsed="0.007003"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2026-08-29T07:54:56.722030" level="INFO">${actual} =  </msg>
+<var>${actual}</var>
+<arg>SEPARATOR=${SPACE}</arg>
+<arg>${dialog_text}</arg>
+<arg>${form_text}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2026-08-29T07:54:56.721029" elapsed="0.001996"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-08-29T07:54:56.724030" level="INFO">${actual} = </msg>
+<var>${actual}</var>
+<arg>${actual}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-08-29T07:54:56.723025" elapsed="0.002002"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2026-08-29T07:54:56.727029" level="INFO">${actual} = เข้าสู่ระบบสำเร็จ</msg>
+<var>${actual}</var>
+<arg>'${actual}' == ''</arg>
+<arg>เข้าสู่ระบบสำเร็จ</arg>
+<arg>${actual}</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2026-08-29T07:54:56.726035" elapsed="0.001992"/>
+</kw>
+<return>
+<value>${actual}</value>
+<status status="PASS" start="2026-08-29T07:54:56.728027" elapsed="0.001000"/>
+</return>
+<msg time="2026-08-29T07:54:56.729027" level="INFO">${actual} = เข้าสู่ระบบสำเร็จ</msg>
+<var>${actual}</var>
+<status status="PASS" start="2026-08-29T07:54:51.747843" elapsed="4.982190"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>7</arg>
+<arg>${actual}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2026-08-29T07:54:56.730033" elapsed="0.001995"/>
+</kw>
+<kw name="Capture Screenshot" owner="KeywordLoginFarmer">
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2026-08-29T07:54:57.873957" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screens/LoginFarmer/TC01_001.png" target="_blank"&gt;&lt;img src="Screens/LoginFarmer/TC01_001.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_BASE_DIR}/${feature_name}/${testcase_id}</arg>
+<arg>fileType=png</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2026-08-29T07:54:56.734024" elapsed="1.140930"/>
+</kw>
+<arg>${testcase_id}</arg>
+<arg>${FEATURE_NAME}</arg>
+<status status="PASS" start="2026-08-29T07:54:56.732028" elapsed="1.142926"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Verify Login Message" owner="KeywordLoginFarmer">
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-08-29T07:54:57.878951" elapsed="0.001016"/>
+</kw>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<status status="PASS" start="2026-08-29T07:54:57.876955" elapsed="0.003012"/>
+</kw>
+<msg time="2026-08-29T07:54:57.880955" level="INFO">${status} = PASS</msg>
+<msg time="2026-08-29T07:54:57.881968" level="INFO">${error_message} = None</msg>
+<var>${status}</var>
+<var>${error_message}</var>
+<arg>Verify Login Message</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-08-29T07:54:57.875961" elapsed="0.006007"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-29T07:54:57.883957" level="INFO">${is_passed} = True</msg>
+<var>${is_passed}</var>
+<arg>${status == 'PASS'}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-29T07:54:57.882980" elapsed="0.001975"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Pass</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2026-08-29T07:54:57.886480" elapsed="0.001003"/>
+</kw>
+<arg>${is_passed}</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Pass</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<arg>ELSE</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Fail: ${error_message}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-29T07:54:57.885466" elapsed="0.003015"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${EXCEL_PATH}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="PASS" start="2026-08-29T07:54:57.888481" elapsed="0.161014"/>
+</kw>
+<kw name="Close Error Dialog If Present" owner="KeywordLoginFarmer">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click" owner="Browser">
+<msg time="2026-08-29T07:54:58.055778" level="INFO">Clicks the element 'css=[role="dialog"] button'.</msg>
+<arg>${DIALOG_CLOSE_BTN}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-08-29T07:54:58.054776" elapsed="0.068185"/>
+</kw>
+<arg>Click</arg>
+<arg>${DIALOG_CLOSE_BTN}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-08-29T07:54:58.053776" elapsed="0.070188"/>
+</kw>
+<status status="PASS" start="2026-08-29T07:54:58.051178" elapsed="0.072786"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Logout After Login" owner="KeywordLoginFarmer">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click" owner="Browser">
+<msg time="2026-08-29T07:54:58.132960" level="INFO">Clicks the element 'css=nav button:last-of-type'.</msg>
+<msg time="2026-08-29T07:55:09.328006" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-3.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-3.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-29T07:55:09.329007" level="INFO">See also file:///C:/RiceClaimTest/results/playwright-log.txt for additional details.</msg>
+<msg time="2026-08-29T07:55:09.329007" level="FAIL">TimeoutError: locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('nav button:last-of-type')
+    - locator resolved to &lt;button type="button" data-state="closed" aria-expanded="false" aria-haspopup="dialog" data-slot="sheet-trigger" aria-controls="radix-«r0»"&gt;…&lt;/button&gt;
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    19 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+</msg>
+<arg>${BTN_USER_MENU}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="FAIL" start="2026-08-29T07:54:58.129962" elapsed="11.238046">TimeoutError: locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('nav button:last-of-type')
+    - locator resolved to &lt;button type="button" data-state="closed" aria-expanded="false" aria-haspopup="dialog" data-slot="sheet-trigger" aria-controls="radix-«r0»"&gt;…&lt;/button&gt;
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    19 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+</status>
+</kw>
+<arg>Click</arg>
+<arg>${BTN_USER_MENU}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-08-29T07:54:58.128968" elapsed="11.239040"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-08-29T07:55:10.370409" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-08-29T07:55:09.369008" elapsed="1.001401"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click" owner="Browser">
+<msg time="2026-08-29T07:55:10.374417" level="INFO">Clicks the element '//a[contains(normalize-space(.), 'ออกจากระบบ')]'.</msg>
+<msg time="2026-08-29T07:55:21.441217" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-4.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-4.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-29T07:55:21.441217" level="INFO">See also file:///C:/RiceClaimTest/results/playwright-log.txt for additional details.</msg>
+<msg time="2026-08-29T07:55:21.442216" level="FAIL">TimeoutError: locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('//a[contains(normalize-space(.), \'ออกจากระบบ\')]')
+</msg>
+<arg>${BTN_LOGOUT}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="FAIL" start="2026-08-29T07:55:10.372419" elapsed="11.083797">TimeoutError: locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('//a[contains(normalize-space(.), \'ออกจากระบบ\')]')
+</status>
+</kw>
+<arg>Click</arg>
+<arg>${BTN_LOGOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-08-29T07:55:10.371420" elapsed="11.084796"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-08-29T07:55:22.458297" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-08-29T07:55:21.457216" elapsed="1.001081"/>
+</kw>
+<status status="PASS" start="2026-08-29T07:54:58.127968" elapsed="24.330329"/>
+</kw>
+<arg>Logout After Login</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-08-29T07:54:58.126967" elapsed="24.331330"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<msg time="2026-08-29T07:55:22.896015" level="INFO">Successfully opened URL http://localhost:5173/login</msg>
+<arg>${LOGIN_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2026-08-29T07:55:22.459402" elapsed="0.437614"/>
+</kw>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Logout After Login</arg>
+<arg>AND</arg>
+<arg>Go To</arg>
+<arg>${LOGIN_URL}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-08-29T07:54:58.125963" elapsed="24.772054"/>
+</kw>
+<arg>${is_passed}</arg>
+<arg>Run Keywords</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Logout After Login</arg>
+<arg>AND</arg>
+<arg>Go To</arg>
+<arg>${LOGIN_URL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-29T07:54:58.124963" elapsed="24.774056"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>TC${testcase_id} failed: actual="${actual}" expected="${expected}"</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-08-29T07:55:22.901025" elapsed="0.000994"/>
+</kw>
+<arg>Should Be True</arg>
+<arg>${is_passed}</arg>
+<arg>TC${testcase_id} failed: actual="${actual}" expected="${expected}"</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2026-08-29T07:55:22.899019" elapsed="0.004000"/>
+</kw>
+<arg>2</arg>
+<status status="PASS" start="2026-08-29T07:54:50.874891" elapsed="32.028128"/>
+</kw>
+<status status="PASS" start="2026-08-29T07:54:50.848200" elapsed="32.055816"/>
+</test>
+<test id="s1-s1-s1-t2" name="TC01_002" line="25">
+<kw name="Farmer Login Template">
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2026-08-29T07:55:23.102628" level="INFO">${run_status} = YES </msg>
+<var>${run_status}</var>
+<arg>${row}</arg>
+<arg>1</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2026-08-29T07:55:23.101559" elapsed="0.001597"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-08-29T07:55:23.105369" level="INFO">${run_status} = YES </msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-08-29T07:55:23.103695" elapsed="0.001674"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-08-29T07:55:23.107597" level="INFO">${run_status} = YES</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-08-29T07:55:23.105929" elapsed="0.002227"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-08-29T07:55:23.109812" level="INFO">${is_skip} = False</msg>
+<var>${is_skip}</var>
+<arg>'${run_status}'.lower() == 'no'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-08-29T07:55:23.108156" elapsed="0.002217"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_skip}</arg>
+<arg>Pass Execution</arg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-29T07:55:23.110820" elapsed="0.001081"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2026-08-29T07:55:23.113629" level="INFO">${testcase_id} = TC01_002</msg>
+<var>${testcase_id}</var>
+<arg>${row}</arg>
+<arg>2</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2026-08-29T07:55:23.112492" elapsed="0.001693"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-08-29T07:55:23.115261" level="INFO">${testcase_id} = TC01_002</msg>
+<var>${testcase_id}</var>
+<arg>${testcase_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-08-29T07:55:23.114725" elapsed="0.001074"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<msg time="2026-08-29T07:55:23.443416" level="INFO">Successfully opened URL http://localhost:5173/login</msg>
+<arg>${LOGIN_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2026-08-29T07:55:23.116337" elapsed="0.328081"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2026-08-29T07:55:23.446420" level="INFO">${farmer_id} = ABC076084633</msg>
+<var>${farmer_id}</var>
+<arg>${row}</arg>
+<arg>4</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2026-08-29T07:55:23.445417" elapsed="0.002000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2026-08-29T07:55:23.449421" level="INFO">${password} = Password0002</msg>
+<var>${password}</var>
+<arg>${row}</arg>
+<arg>5</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2026-08-29T07:55:23.447417" elapsed="0.002004"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2026-08-29T07:55:23.451418" level="INFO">${expected} = กรุณากรอกรหัสทะเบียนเกษตรกร</msg>
+<var>${expected}</var>
+<arg>${row}</arg>
+<arg>6</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2026-08-29T07:55:23.450421" elapsed="0.001999"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-08-29T07:55:23.453418" level="INFO">${farmer_id} = ABC076084633</msg>
+<var>${farmer_id}</var>
+<arg>${farmer_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-08-29T07:55:23.452420" elapsed="0.001999"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-08-29T07:55:23.456419" level="INFO">${password} = Password0002</msg>
+<var>${password}</var>
+<arg>${password}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-08-29T07:55:23.454419" elapsed="0.002000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-08-29T07:55:23.458418" level="INFO">${expected} = กรุณากรอกรหัสทะเบียนเกษตรกร</msg>
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-08-29T07:55:23.457418" elapsed="0.001000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-08-29T07:55:23.460417" level="INFO">${expected} = กรุณากรอกรหัสทะเบียนเกษตรกร</msg>
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-08-29T07:55:23.459417" elapsed="0.001000"/>
+</kw>
+<kw name="Fill Farmer Login Form" owner="KeywordLoginFarmer">
+<kw name="Click" owner="Browser">
+<msg time="2026-08-29T07:55:23.464418" level="INFO">Clicks the element '//button[contains(normalize-space(.), 'เกษตรกร')]'.</msg>
+<arg>${TAB_FARMER}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-08-29T07:55:23.463419" elapsed="0.150666"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-08-29T07:55:23.617085" level="INFO">Fills the text 'ABC076084633' in the given field.</msg>
+<arg>${TXT_USERNAME}</arg>
+<arg>${farmer_id}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-08-29T07:55:23.616082" elapsed="0.028005"/>
+</kw>
+<arg>'${farmer_id}' != 'None' and '${farmer_id}' != ''</arg>
+<arg>Fill Text</arg>
+<arg>${TXT_USERNAME}</arg>
+<arg>${farmer_id}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-29T07:55:23.615087" elapsed="0.029000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-08-29T07:55:23.648085" level="INFO">Fills the text 'Password0002' in the given field.</msg>
+<arg>${TXT_PASSWORD}</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-08-29T07:55:23.647086" elapsed="0.033999"/>
+</kw>
+<arg>'${password}' != 'None' and '${password}' != ''</arg>
+<arg>Fill Text</arg>
+<arg>${TXT_PASSWORD}</arg>
+<arg>${password}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-29T07:55:23.645086" elapsed="0.037001"/>
+</kw>
+<arg>${farmer_id}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2026-08-29T07:55:23.461417" elapsed="0.221674"/>
+</kw>
+<kw name="Submit Login" owner="KeywordLoginFarmer">
+<kw name="Click" owner="Browser">
+<msg time="2026-08-29T07:55:23.687085" level="INFO">Clicks the element '//button[contains(normalize-space(.), 'เข้าสู่ระบบ')]'.</msg>
+<arg>${BTN_LOGIN}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-08-29T07:55:23.685087" elapsed="0.070536"/>
+</kw>
+<status status="PASS" start="2026-08-29T07:55:23.683091" elapsed="0.072532"/>
+</kw>
+<kw name="Get Actual Login Message" owner="KeywordLoginFarmer">
+<kw name="Set Browser Timeout" owner="Browser">
+<msg time="2026-08-29T07:55:23.766626" level="INFO">${old_timeout} = 10 seconds</msg>
+<var>${old_timeout}</var>
+<arg>2s</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" start="2026-08-29T07:55:23.757623" elapsed="0.010001"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Get Text" owner="Browser">
+<msg time="2026-08-29T07:55:26.250263" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-5.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-5.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-29T07:55:26.251358" level="INFO">See also file:///C:/RiceClaimTest/results/playwright-log.txt for additional details.</msg>
+<msg time="2026-08-29T07:55:26.251899" level="FAIL">TimeoutError: locator.elementHandle: Timeout 2000ms exceeded.
+Call log:
+  - waiting for locator('[data-slot="dialog-description"]')
+</msg>
+<arg>${DIALOG_DESCRIPTION}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="FAIL" start="2026-08-29T07:55:23.770624" elapsed="2.492952">TimeoutError: locator.elementHandle: Timeout 2000ms exceeded.
+Call log:
+  - waiting for locator('[data-slot="dialog-description"]')
+</status>
+</kw>
+<msg time="2026-08-29T07:55:26.264583" level="INFO">${dialog_status} = FAIL</msg>
+<msg time="2026-08-29T07:55:26.265577" level="INFO">${dialog_value} = TimeoutError: locator.elementHandle: Timeout 2000ms exceeded.
+Call log:
+  - waiting for locator('[data-slot="dialog-description"]')
+</msg>
+<var>${dialog_status}</var>
+<var>${dialog_value}</var>
+<arg>Get Text</arg>
+<arg>${DIALOG_DESCRIPTION}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-08-29T07:55:23.768626" elapsed="2.496951"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2026-08-29T07:55:26.268578" level="INFO">${dialog_text} = </msg>
+<var>${dialog_text}</var>
+<arg>'${dialog_status}' == 'PASS'</arg>
+<arg>${dialog_value}</arg>
+<arg>${EMPTY}</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2026-08-29T07:55:26.266580" elapsed="0.001998"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Get Form Error Messages" owner="KeywordLoginFarmer">
+<kw name="Get Elements" owner="Browser">
+<msg time="2026-08-29T07:55:28.283304" level="INFO">Found  Locators successfully.</msg>
+<msg time="2026-08-29T07:55:28.284305" level="INFO">${elements} = []</msg>
+<var>${elements}</var>
+<arg>${FORM_MESSAGE}</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for all matched elements by ``selector``.</doc>
+<status status="PASS" start="2026-08-29T07:55:26.271576" elapsed="2.012729"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-08-29T07:55:28.286308" level="INFO">${texts} = []</msg>
+<var>${texts}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-08-29T07:55:28.285306" elapsed="0.001002"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Element States" owner="Browser">
+<var>${is_visible}</var>
+<arg>${el}</arg>
+<arg>contains</arg>
+<arg>visible</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:28.288307" elapsed="0.000996"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_visible}">
+<kw name="Get Text" owner="Browser">
+<var>${txt}</var>
+<arg>${el}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:28.290307" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="$txt != ''">
+<kw name="Append To List" owner="Collections">
+<arg>${texts}</arg>
+<arg>${txt}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:28.291308" elapsed="0.001000"/>
+</kw>
+<status status="NOT RUN" start="2026-08-29T07:55:28.290307" elapsed="0.002001"/>
+</branch>
+<status status="NOT RUN" start="2026-08-29T07:55:28.290307" elapsed="0.002001"/>
+</if>
+<status status="NOT RUN" start="2026-08-29T07:55:28.289303" elapsed="0.003005"/>
+</branch>
+<status status="NOT RUN" start="2026-08-29T07:55:28.289303" elapsed="0.003005"/>
+</if>
+<var name="${el}"/>
+<status status="NOT RUN" start="2026-08-29T07:55:28.288307" elapsed="0.004001"/>
+</iter>
+<var>${el}</var>
+<value>@{elements}</value>
+<status status="NOT RUN" start="2026-08-29T07:55:28.287307" elapsed="0.005001"/>
+</for>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2026-08-29T07:55:28.294308" level="INFO">${joined} = </msg>
+<var>${joined}</var>
+<arg>SEPARATOR=${SPACE}</arg>
+<arg>@{texts}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2026-08-29T07:55:28.293310" elapsed="0.000998"/>
+</kw>
+<return>
+<value>${joined}</value>
+<status status="PASS" start="2026-08-29T07:55:28.295307" elapsed="0.000000"/>
+</return>
+<status status="PASS" start="2026-08-29T07:55:26.270580" elapsed="2.025731"/>
+</kw>
+<msg time="2026-08-29T07:55:28.296311" level="INFO">${form_status} = PASS</msg>
+<msg time="2026-08-29T07:55:28.296311" level="INFO">${form_value} = </msg>
+<var>${form_status}</var>
+<var>${form_value}</var>
+<arg>Get Form Error Messages</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-08-29T07:55:26.269583" elapsed="2.027726"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2026-08-29T07:55:28.299308" level="INFO">${form_text} = </msg>
+<var>${form_text}</var>
+<arg>'${form_status}' == 'PASS'</arg>
+<arg>${form_value}</arg>
+<arg>${EMPTY}</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2026-08-29T07:55:28.297309" elapsed="0.001999"/>
+</kw>
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>${old_timeout}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" start="2026-08-29T07:55:28.300307" elapsed="0.005006"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2026-08-29T07:55:28.306313" level="INFO">${actual} =  </msg>
+<var>${actual}</var>
+<arg>SEPARATOR=${SPACE}</arg>
+<arg>${dialog_text}</arg>
+<arg>${form_text}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2026-08-29T07:55:28.305313" elapsed="0.002000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-08-29T07:55:28.308313" level="INFO">${actual} = </msg>
+<var>${actual}</var>
+<arg>${actual}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-08-29T07:55:28.307313" elapsed="0.001000"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2026-08-29T07:55:28.310316" level="INFO">${actual} = เข้าสู่ระบบสำเร็จ</msg>
+<var>${actual}</var>
+<arg>'${actual}' == ''</arg>
+<arg>เข้าสู่ระบบสำเร็จ</arg>
+<arg>${actual}</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2026-08-29T07:55:28.309313" elapsed="0.001003"/>
+</kw>
+<return>
+<value>${actual}</value>
+<status status="PASS" start="2026-08-29T07:55:28.311317" elapsed="0.000000"/>
+</return>
+<msg time="2026-08-29T07:55:28.312315" level="INFO">${actual} = เข้าสู่ระบบสำเร็จ</msg>
+<var>${actual}</var>
+<status status="PASS" start="2026-08-29T07:55:23.756622" elapsed="4.555693"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>7</arg>
+<arg>${actual}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2026-08-29T07:55:28.312315" elapsed="0.002000"/>
+</kw>
+<kw name="Capture Screenshot" owner="KeywordLoginFarmer">
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2026-08-29T07:55:29.323301" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screens/LoginFarmer/TC01_002.png" target="_blank"&gt;&lt;img src="Screens/LoginFarmer/TC01_002.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_BASE_DIR}/${feature_name}/${testcase_id}</arg>
+<arg>fileType=png</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2026-08-29T07:55:28.315314" elapsed="1.008994"/>
+</kw>
+<arg>${testcase_id}</arg>
+<arg>${FEATURE_NAME}</arg>
+<status status="PASS" start="2026-08-29T07:55:28.314315" elapsed="1.010984"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Verify Login Message" owner="KeywordLoginFarmer">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-08-29T07:55:29.329309" level="FAIL">'เข้าสู่ระบบสำเร็จ' does not contain 'กรุณากรอกรหัสทะเบียนเกษตรกร'</msg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-08-29T07:55:29.328303" elapsed="0.013998">'เข้าสู่ระบบสำเร็จ' does not contain 'กรุณากรอกรหัสทะเบียนเกษตรกร'</status>
+</kw>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<status status="FAIL" start="2026-08-29T07:55:29.326300" elapsed="0.016001">'เข้าสู่ระบบสำเร็จ' does not contain 'กรุณากรอกรหัสทะเบียนเกษตรกร'</status>
+</kw>
+<msg time="2026-08-29T07:55:29.343301" level="INFO">${status} = FAIL</msg>
+<msg time="2026-08-29T07:55:29.343301" level="INFO">${error_message} = 'เข้าสู่ระบบสำเร็จ' does not contain 'กรุณากรอกรหัสทะเบียนเกษตรกร'</msg>
+<var>${status}</var>
+<var>${error_message}</var>
+<arg>Verify Login Message</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-08-29T07:55:29.325299" elapsed="0.019003"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-29T07:55:29.346301" level="INFO">${is_passed} = False</msg>
+<var>${is_passed}</var>
+<arg>${status == 'PASS'}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-29T07:55:29.344302" elapsed="0.002999"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Fail: ${error_message}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2026-08-29T07:55:29.350304" elapsed="0.000996"/>
+</kw>
+<arg>${is_passed}</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Pass</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<arg>ELSE</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Fail: ${error_message}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-29T07:55:29.348301" elapsed="0.003997"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${EXCEL_PATH}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="PASS" start="2026-08-29T07:55:29.352298" elapsed="0.138531"/>
+</kw>
+<kw name="Close Error Dialog If Present" owner="KeywordLoginFarmer">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click" owner="Browser">
+<msg time="2026-08-29T07:55:29.495828" level="INFO">Clicks the element 'css=[role="dialog"] button'.</msg>
+<msg time="2026-08-29T07:55:40.534580" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-6.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-6.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-29T07:55:40.534580" level="INFO">See also file:///C:/RiceClaimTest/results/playwright-log.txt for additional details.</msg>
+<msg time="2026-08-29T07:55:40.535577" level="FAIL">TimeoutError: locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('[role="dialog"] button')
+</msg>
+<arg>${DIALOG_CLOSE_BTN}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="FAIL" start="2026-08-29T07:55:29.493828" elapsed="11.051753">TimeoutError: locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('[role="dialog"] button')
+</status>
+</kw>
+<arg>Click</arg>
+<arg>${DIALOG_CLOSE_BTN}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-08-29T07:55:29.492827" elapsed="11.052754"/>
+</kw>
+<status status="PASS" start="2026-08-29T07:55:29.491829" elapsed="11.053752"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Run Keywords</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Logout After Login</arg>
+<arg>AND</arg>
+<arg>Go To</arg>
+<arg>${LOGIN_URL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.545581" elapsed="0.001000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2026-08-29T07:55:40.548577" level="FAIL">TCTC01_002 failed: actual="เข้าสู่ระบบสำเร็จ" expected="กรุณากรอกรหัสทะเบียนเกษตรกร"</msg>
+<arg>${is_passed}</arg>
+<arg>TC${testcase_id} failed: actual="${actual}" expected="${expected}"</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2026-08-29T07:55:40.547581" elapsed="0.009000">TCTC01_002 failed: actual="เข้าสู่ระบบสำเร็จ" expected="กรุณากรอกรหัสทะเบียนเกษตรกร"</status>
+</kw>
+<arg>Should Be True</arg>
+<arg>${is_passed}</arg>
+<arg>TC${testcase_id} failed: actual="${actual}" expected="${expected}"</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="FAIL" start="2026-08-29T07:55:40.547581" elapsed="0.009999">TCTC01_002 failed: actual="เข้าสู่ระบบสำเร็จ" expected="กรุณากรอกรหัสทะเบียนเกษตรกร"</status>
+</kw>
+<arg>3</arg>
+<status status="FAIL" start="2026-08-29T07:55:23.100457" elapsed="17.457123">TCTC01_002 failed: actual="เข้าสู่ระบบสำเร็จ" expected="กรุณากรอกรหัสทะเบียนเกษตรกร"</status>
+</kw>
+<status status="FAIL" start="2026-08-29T07:55:23.012084" elapsed="17.546498">TCTC01_002 failed: actual="เข้าสู่ระบบสำเร็จ" expected="กรุณากรอกรหัสทะเบียนเกษตรกร"</status>
+</test>
+<test id="s1-s1-s1-t3" name="TC01_003" line="26">
+<kw name="Farmer Login Template">
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2026-08-29T07:55:40.658785" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${row}</arg>
+<arg>1</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.657786" elapsed="0.001999"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-08-29T07:55:40.660786" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.659785" elapsed="0.002000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-08-29T07:55:40.662784" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.661785" elapsed="0.001999"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-08-29T07:55:40.664783" level="INFO">${is_skip} = True</msg>
+<var>${is_skip}</var>
+<arg>'${run_status}'.lower() == 'no'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.663784" elapsed="0.000999"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Pass Execution" owner="BuiltIn">
+<msg time="2026-08-29T07:55:40.666782" level="INFO">Execution passed with message:
+ข้ามการทดสอบ</msg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.665782" elapsed="0.002006">ข้ามการทดสอบ</status>
+</kw>
+<arg>${is_skip}</arg>
+<arg>Pass Execution</arg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.665782" elapsed="0.002006">ข้ามการทดสอบ</status>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${testcase_id}</var>
+<arg>${row}</arg>
+<arg>2</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.667788" elapsed="0.000998"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${testcase_id}</var>
+<arg>${testcase_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.668786" elapsed="0.001002"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>${LOGIN_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.669788" elapsed="0.000000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${farmer_id}</var>
+<arg>${row}</arg>
+<arg>4</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.670788" elapsed="0.000000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${password}</var>
+<arg>${row}</arg>
+<arg>5</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.670788" elapsed="0.000999"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${expected}</var>
+<arg>${row}</arg>
+<arg>6</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.671787" elapsed="0.000996"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${farmer_id}</var>
+<arg>${farmer_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.672783" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${password}</var>
+<arg>${password}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.673784" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.673784" elapsed="0.001000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.674784" elapsed="0.000000"/>
+</kw>
+<kw name="Fill Farmer Login Form" owner="KeywordLoginFarmer">
+<arg>${farmer_id}</arg>
+<arg>${password}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:40.675784" elapsed="0.000000"/>
+</kw>
+<kw name="Submit Login" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:40.675784" elapsed="0.000999"/>
+</kw>
+<kw name="Get Actual Login Message" owner="KeywordLoginFarmer">
+<var>${actual}</var>
+<status status="NOT RUN" start="2026-08-29T07:55:40.676783" elapsed="0.000999"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>7</arg>
+<arg>${actual}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.677782" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Screenshot" owner="KeywordLoginFarmer">
+<arg>${testcase_id}</arg>
+<arg>${FEATURE_NAME}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:40.678782" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<var>${status}</var>
+<var>${error_message}</var>
+<arg>Verify Login Message</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.679784" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${is_passed}</var>
+<arg>${status == 'PASS'}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.679784" elapsed="0.001006"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Pass</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<arg>ELSE</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Fail: ${error_message}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.680790" elapsed="0.000993"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${EXCEL_PATH}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.681783" elapsed="0.000000"/>
+</kw>
+<kw name="Close Error Dialog If Present" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:40.682786" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Run Keywords</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Logout After Login</arg>
+<arg>AND</arg>
+<arg>Go To</arg>
+<arg>${LOGIN_URL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.683783" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<arg>Should Be True</arg>
+<arg>${is_passed}</arg>
+<arg>TC${testcase_id} failed: actual="${actual}" expected="${expected}"</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.684786" elapsed="0.000000"/>
+</kw>
+<arg>4</arg>
+<status status="PASS" start="2026-08-29T07:55:40.656786" elapsed="0.028000">ข้ามการทดสอบ</status>
+</kw>
+<status status="PASS" start="2026-08-29T07:55:40.598258" elapsed="0.087530">ข้ามการทดสอบ</status>
+</test>
+<test id="s1-s1-s1-t4" name="TC01_004" line="27">
+<kw name="Farmer Login Template">
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2026-08-29T07:55:40.767308" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${row}</arg>
+<arg>1</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.766310" elapsed="0.000998"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-08-29T07:55:40.768307" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.767308" elapsed="0.000999"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-08-29T07:55:40.770314" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.769308" elapsed="0.001006"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-08-29T07:55:40.771309" level="INFO">${is_skip} = True</msg>
+<var>${is_skip}</var>
+<arg>'${run_status}'.lower() == 'no'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.770314" elapsed="0.001995"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Pass Execution" owner="BuiltIn">
+<msg time="2026-08-29T07:55:40.774311" level="INFO">Execution passed with message:
+ข้ามการทดสอบ</msg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.773315" elapsed="0.000996">ข้ามการทดสอบ</status>
+</kw>
+<arg>${is_skip}</arg>
+<arg>Pass Execution</arg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.772309" elapsed="0.002998">ข้ามการทดสอบ</status>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${testcase_id}</var>
+<arg>${row}</arg>
+<arg>2</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.775307" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${testcase_id}</var>
+<arg>${testcase_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.776309" elapsed="0.000000"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>${LOGIN_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.776309" elapsed="0.001001"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${farmer_id}</var>
+<arg>${row}</arg>
+<arg>4</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.777310" elapsed="0.000997"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${password}</var>
+<arg>${row}</arg>
+<arg>5</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.778307" elapsed="0.000000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${expected}</var>
+<arg>${row}</arg>
+<arg>6</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.779312" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${farmer_id}</var>
+<arg>${farmer_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.779312" elapsed="0.000998"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${password}</var>
+<arg>${password}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.780310" elapsed="0.001000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.781310" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.781310" elapsed="0.001000"/>
+</kw>
+<kw name="Fill Farmer Login Form" owner="KeywordLoginFarmer">
+<arg>${farmer_id}</arg>
+<arg>${password}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:40.782310" elapsed="0.001000"/>
+</kw>
+<kw name="Submit Login" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:40.783310" elapsed="0.000000"/>
+</kw>
+<kw name="Get Actual Login Message" owner="KeywordLoginFarmer">
+<var>${actual}</var>
+<status status="NOT RUN" start="2026-08-29T07:55:40.784308" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>7</arg>
+<arg>${actual}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.785311" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Screenshot" owner="KeywordLoginFarmer">
+<arg>${testcase_id}</arg>
+<arg>${FEATURE_NAME}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:40.785311" elapsed="0.000998"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<var>${status}</var>
+<var>${error_message}</var>
+<arg>Verify Login Message</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.786309" elapsed="0.001000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${is_passed}</var>
+<arg>${status == 'PASS'}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.787309" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Pass</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<arg>ELSE</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Fail: ${error_message}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.788309" elapsed="0.000000"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${EXCEL_PATH}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.788309" elapsed="0.001001"/>
+</kw>
+<kw name="Close Error Dialog If Present" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:40.789310" elapsed="0.000997"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Run Keywords</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Logout After Login</arg>
+<arg>AND</arg>
+<arg>Go To</arg>
+<arg>${LOGIN_URL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.790307" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<arg>Should Be True</arg>
+<arg>${is_passed}</arg>
+<arg>TC${testcase_id} failed: actual="${actual}" expected="${expected}"</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.791307" elapsed="0.000000"/>
+</kw>
+<arg>5</arg>
+<status status="PASS" start="2026-08-29T07:55:40.765309" elapsed="0.025998">ข้ามการทดสอบ</status>
+</kw>
+<status status="PASS" start="2026-08-29T07:55:40.710784" elapsed="0.081525">ข้ามการทดสอบ</status>
+</test>
+<test id="s1-s1-s1-t5" name="TC01_005" line="28">
+<kw name="Farmer Login Template">
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2026-08-29T07:55:40.832839" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${row}</arg>
+<arg>1</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.831839" elapsed="0.001999"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-08-29T07:55:40.834842" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.833838" elapsed="0.001004"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-08-29T07:55:40.835839" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.835839" elapsed="0.001002"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-08-29T07:55:40.837839" level="INFO">${is_skip} = True</msg>
+<var>${is_skip}</var>
+<arg>'${run_status}'.lower() == 'no'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.836841" elapsed="0.000998"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Pass Execution" owner="BuiltIn">
+<msg time="2026-08-29T07:55:40.839841" level="INFO">Execution passed with message:
+ข้ามการทดสอบ</msg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.839841" elapsed="0.000997">ข้ามการทดสอบ</status>
+</kw>
+<arg>${is_skip}</arg>
+<arg>Pass Execution</arg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.838841" elapsed="0.001997">ข้ามการทดสอบ</status>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${testcase_id}</var>
+<arg>${row}</arg>
+<arg>2</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.840838" elapsed="0.001003"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${testcase_id}</var>
+<arg>${testcase_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.841841" elapsed="0.000000"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>${LOGIN_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.842839" elapsed="0.000000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${farmer_id}</var>
+<arg>${row}</arg>
+<arg>4</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.842839" elapsed="0.001004"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${password}</var>
+<arg>${row}</arg>
+<arg>5</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.843843" elapsed="0.001004"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${expected}</var>
+<arg>${row}</arg>
+<arg>6</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.844847" elapsed="0.000997"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${farmer_id}</var>
+<arg>${farmer_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.845844" elapsed="0.000996"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${password}</var>
+<arg>${password}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.846840" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.847840" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.847840" elapsed="0.001000"/>
+</kw>
+<kw name="Fill Farmer Login Form" owner="KeywordLoginFarmer">
+<arg>${farmer_id}</arg>
+<arg>${password}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:40.848840" elapsed="0.001000"/>
+</kw>
+<kw name="Submit Login" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:40.849840" elapsed="0.000998"/>
+</kw>
+<kw name="Get Actual Login Message" owner="KeywordLoginFarmer">
+<var>${actual}</var>
+<status status="NOT RUN" start="2026-08-29T07:55:40.850838" elapsed="0.001002"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>7</arg>
+<arg>${actual}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.851840" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Screenshot" owner="KeywordLoginFarmer">
+<arg>${testcase_id}</arg>
+<arg>${FEATURE_NAME}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:40.852840" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<var>${status}</var>
+<var>${error_message}</var>
+<arg>Verify Login Message</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.852840" elapsed="0.001000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${is_passed}</var>
+<arg>${status == 'PASS'}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.853840" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Pass</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<arg>ELSE</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Fail: ${error_message}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.854839" elapsed="0.000000"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${EXCEL_PATH}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.855840" elapsed="0.000000"/>
+</kw>
+<kw name="Close Error Dialog If Present" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:40.855840" elapsed="0.001001"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Run Keywords</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Logout After Login</arg>
+<arg>AND</arg>
+<arg>Go To</arg>
+<arg>${LOGIN_URL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.856841" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<arg>Should Be True</arg>
+<arg>${is_passed}</arg>
+<arg>TC${testcase_id} failed: actual="${actual}" expected="${expected}"</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.857837" elapsed="0.000000"/>
+</kw>
+<arg>6</arg>
+<status status="PASS" start="2026-08-29T07:55:40.830841" elapsed="0.028001">ข้ามการทดสอบ</status>
+</kw>
+<status status="PASS" start="2026-08-29T07:55:40.807311" elapsed="0.051531">ข้ามการทดสอบ</status>
+</test>
+<test id="s1-s1-s1-t6" name="TC01_006" line="29">
+<kw name="Farmer Login Template">
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2026-08-29T07:55:40.905838" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${row}</arg>
+<arg>1</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.904839" elapsed="0.000999"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-08-29T07:55:40.907839" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.906841" elapsed="0.000998"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-08-29T07:55:40.908839" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.907839" elapsed="0.002003"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-08-29T07:55:40.910840" level="INFO">${is_skip} = True</msg>
+<var>${is_skip}</var>
+<arg>'${run_status}'.lower() == 'no'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.909842" elapsed="0.002010"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Pass Execution" owner="BuiltIn">
+<msg time="2026-08-29T07:55:40.914847" level="INFO">Execution passed with message:
+ข้ามการทดสอบ</msg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.913850" elapsed="0.000997">ข้ามการทดสอบ</status>
+</kw>
+<arg>${is_skip}</arg>
+<arg>Pass Execution</arg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.912849" elapsed="0.002999">ข้ามการทดสอบ</status>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${testcase_id}</var>
+<arg>${row}</arg>
+<arg>2</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.915848" elapsed="0.001004"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${testcase_id}</var>
+<arg>${testcase_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.916852" elapsed="0.000998"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>${LOGIN_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.917850" elapsed="0.000000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${farmer_id}</var>
+<arg>${row}</arg>
+<arg>4</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.918847" elapsed="0.000000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${password}</var>
+<arg>${row}</arg>
+<arg>5</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.918847" elapsed="0.000999"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${expected}</var>
+<arg>${row}</arg>
+<arg>6</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.919846" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${farmer_id}</var>
+<arg>${farmer_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.920846" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${password}</var>
+<arg>${password}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.921855" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.921855" elapsed="0.000992"/>
+</kw>
+<kw name="Strip String" owner="String">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.922847" elapsed="0.000000"/>
+</kw>
+<kw name="Fill Farmer Login Form" owner="KeywordLoginFarmer">
+<arg>${farmer_id}</arg>
+<arg>${password}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:40.923846" elapsed="0.000000"/>
+</kw>
+<kw name="Submit Login" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:40.924846" elapsed="0.000000"/>
+</kw>
+<kw name="Get Actual Login Message" owner="KeywordLoginFarmer">
+<var>${actual}</var>
+<status status="NOT RUN" start="2026-08-29T07:55:40.924846" elapsed="0.001000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>7</arg>
+<arg>${actual}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.926355" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Screenshot" owner="KeywordLoginFarmer">
+<arg>${testcase_id}</arg>
+<arg>${FEATURE_NAME}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:40.926355" elapsed="0.001007"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<var>${status}</var>
+<var>${error_message}</var>
+<arg>Verify Login Message</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.927362" elapsed="0.001003"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${is_passed}</var>
+<arg>${status == 'PASS'}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.928365" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Pass</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<arg>ELSE</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Fail: ${error_message}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.929363" elapsed="0.000000"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${EXCEL_PATH}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.929363" elapsed="0.001000"/>
+</kw>
+<kw name="Close Error Dialog If Present" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:40.930363" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Run Keywords</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Logout After Login</arg>
+<arg>AND</arg>
+<arg>Go To</arg>
+<arg>${LOGIN_URL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.931362" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<arg>Should Be True</arg>
+<arg>${is_passed}</arg>
+<arg>TC${testcase_id} failed: actual="${actual}" expected="${expected}"</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.931362" elapsed="0.001000"/>
+</kw>
+<arg>7</arg>
+<status status="PASS" start="2026-08-29T07:55:40.903839" elapsed="0.028523">ข้ามการทดสอบ</status>
+</kw>
+<status status="PASS" start="2026-08-29T07:55:40.873838" elapsed="0.059527">ข้ามการทดสอบ</status>
+</test>
+<test id="s1-s1-s1-t7" name="TC01_007" line="30">
+<kw name="Farmer Login Template">
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2026-08-29T07:55:40.966365" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${row}</arg>
+<arg>1</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.966365" elapsed="0.001001"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-08-29T07:55:40.968373" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.967366" elapsed="0.002001"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-08-29T07:55:40.970367" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.969367" elapsed="0.001000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-08-29T07:55:40.971366" level="INFO">${is_skip} = True</msg>
+<var>${is_skip}</var>
+<arg>'${run_status}'.lower() == 'no'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.970367" elapsed="0.001998"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Pass Execution" owner="BuiltIn">
+<msg time="2026-08-29T07:55:40.973364" level="INFO">Execution passed with message:
+ข้ามการทดสอบ</msg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.973364" elapsed="0.001000">ข้ามการทดสอบ</status>
+</kw>
+<arg>${is_skip}</arg>
+<arg>Pass Execution</arg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-29T07:55:40.972365" elapsed="0.001999">ข้ามการทดสอบ</status>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${testcase_id}</var>
+<arg>${row}</arg>
+<arg>2</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.975366" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${testcase_id}</var>
+<arg>${testcase_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.976363" elapsed="0.000000"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>${LOGIN_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.977367" elapsed="0.000000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${farmer_id}</var>
+<arg>${row}</arg>
+<arg>4</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.977367" elapsed="0.000998"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${password}</var>
+<arg>${row}</arg>
+<arg>5</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.978365" elapsed="0.000000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${expected}</var>
+<arg>${row}</arg>
+<arg>6</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.979367" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${farmer_id}</var>
+<arg>${farmer_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.979367" elapsed="0.000999"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${password}</var>
+<arg>${password}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.980366" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.981366" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.981366" elapsed="0.001000"/>
+</kw>
+<kw name="Fill Farmer Login Form" owner="KeywordLoginFarmer">
+<arg>${farmer_id}</arg>
+<arg>${password}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:40.982366" elapsed="0.001001"/>
+</kw>
+<kw name="Submit Login" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:40.983367" elapsed="0.000998"/>
+</kw>
+<kw name="Get Actual Login Message" owner="KeywordLoginFarmer">
+<var>${actual}</var>
+<status status="NOT RUN" start="2026-08-29T07:55:40.984365" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>7</arg>
+<arg>${actual}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.985365" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Screenshot" owner="KeywordLoginFarmer">
+<arg>${testcase_id}</arg>
+<arg>${FEATURE_NAME}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:40.985365" elapsed="0.001000"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<var>${status}</var>
+<var>${error_message}</var>
+<arg>Verify Login Message</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.986365" elapsed="0.000999"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${is_passed}</var>
+<arg>${status == 'PASS'}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.987364" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Pass</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<arg>ELSE</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Fail: ${error_message}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.988365" elapsed="0.000000"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${EXCEL_PATH}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.988365" elapsed="0.001001"/>
+</kw>
+<kw name="Close Error Dialog If Present" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:40.989366" elapsed="0.000998"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Run Keywords</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Logout After Login</arg>
+<arg>AND</arg>
+<arg>Go To</arg>
+<arg>${LOGIN_URL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.990364" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<arg>Should Be True</arg>
+<arg>${is_passed}</arg>
+<arg>TC${testcase_id} failed: actual="${actual}" expected="${expected}"</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:40.991364" elapsed="0.000000"/>
+</kw>
+<arg>8</arg>
+<status status="PASS" start="2026-08-29T07:55:40.964368" elapsed="0.026996">ข้ามการทดสอบ</status>
+</kw>
+<status status="PASS" start="2026-08-29T07:55:40.950363" elapsed="0.042001">ข้ามการทดสอบ</status>
+</test>
+<test id="s1-s1-s1-t8" name="TC01_008" line="31">
+<kw name="Farmer Login Template">
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2026-08-29T07:55:41.034900" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${row}</arg>
+<arg>1</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.034900" elapsed="0.001000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-08-29T07:55:41.036901" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.035900" elapsed="0.002005"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-08-29T07:55:41.039900" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.037905" elapsed="0.001995"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-08-29T07:55:41.041900" level="INFO">${is_skip} = True</msg>
+<var>${is_skip}</var>
+<arg>'${run_status}'.lower() == 'no'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.040901" elapsed="0.000999"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Pass Execution" owner="BuiltIn">
+<msg time="2026-08-29T07:55:41.044901" level="INFO">Execution passed with message:
+ข้ามการทดสอบ</msg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.043901" elapsed="0.001000">ข้ามการทดสอบ</status>
+</kw>
+<arg>${is_skip}</arg>
+<arg>Pass Execution</arg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.042901" elapsed="0.002999">ข้ามการทดสอบ</status>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${testcase_id}</var>
+<arg>${row}</arg>
+<arg>2</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.045900" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${testcase_id}</var>
+<arg>${testcase_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.046902" elapsed="0.000000"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>${LOGIN_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.047901" elapsed="0.000000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${farmer_id}</var>
+<arg>${row}</arg>
+<arg>4</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.047901" elapsed="0.000999"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${password}</var>
+<arg>${row}</arg>
+<arg>5</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.049900" elapsed="0.000000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${expected}</var>
+<arg>${row}</arg>
+<arg>6</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.049900" elapsed="0.000999"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${farmer_id}</var>
+<arg>${farmer_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.050899" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${password}</var>
+<arg>${password}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.051901" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.051901" elapsed="0.000997"/>
+</kw>
+<kw name="Strip String" owner="String">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.052898" elapsed="0.000000"/>
+</kw>
+<kw name="Fill Farmer Login Form" owner="KeywordLoginFarmer">
+<arg>${farmer_id}</arg>
+<arg>${password}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:41.053899" elapsed="0.000000"/>
+</kw>
+<kw name="Submit Login" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:41.054899" elapsed="0.000000"/>
+</kw>
+<kw name="Get Actual Login Message" owner="KeywordLoginFarmer">
+<var>${actual}</var>
+<status status="NOT RUN" start="2026-08-29T07:55:41.055898" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>7</arg>
+<arg>${actual}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.055898" elapsed="0.001000"/>
+</kw>
+<kw name="Capture Screenshot" owner="KeywordLoginFarmer">
+<arg>${testcase_id}</arg>
+<arg>${FEATURE_NAME}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:41.056898" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<var>${status}</var>
+<var>${error_message}</var>
+<arg>Verify Login Message</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.057897" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${is_passed}</var>
+<arg>${status == 'PASS'}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.057897" elapsed="0.001000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Pass</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<arg>ELSE</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Fail: ${error_message}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.058897" elapsed="0.001000"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${EXCEL_PATH}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.059897" elapsed="0.000000"/>
+</kw>
+<kw name="Close Error Dialog If Present" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:41.060896" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Run Keywords</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Logout After Login</arg>
+<arg>AND</arg>
+<arg>Go To</arg>
+<arg>${LOGIN_URL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.060896" elapsed="0.001003"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<arg>Should Be True</arg>
+<arg>${is_passed}</arg>
+<arg>TC${testcase_id} failed: actual="${actual}" expected="${expected}"</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.061899" elapsed="0.000998"/>
+</kw>
+<arg>9</arg>
+<status status="PASS" start="2026-08-29T07:55:41.032902" elapsed="0.029995">ข้ามการทดสอบ</status>
+</kw>
+<status status="PASS" start="2026-08-29T07:55:41.008365" elapsed="0.054532">ข้ามการทดสอบ</status>
+</test>
+<test id="s1-s1-s1-t9" name="TC01_009" line="32">
+<kw name="Farmer Login Template">
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2026-08-29T07:55:41.094900" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${row}</arg>
+<arg>1</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.093897" elapsed="0.001003"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-08-29T07:55:41.095902" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.094900" elapsed="0.002000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-08-29T07:55:41.097899" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.096900" elapsed="0.000999"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-08-29T07:55:41.099899" level="INFO">${is_skip} = True</msg>
+<var>${is_skip}</var>
+<arg>'${run_status}'.lower() == 'no'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.098900" elapsed="0.002000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Pass Execution" owner="BuiltIn">
+<msg time="2026-08-29T07:55:41.102904" level="INFO">Execution passed with message:
+ข้ามการทดสอบ</msg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.101901" elapsed="0.001003">ข้ามการทดสอบ</status>
+</kw>
+<arg>${is_skip}</arg>
+<arg>Pass Execution</arg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.100900" elapsed="0.002004">ข้ามการทดสอบ</status>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${testcase_id}</var>
+<arg>${row}</arg>
+<arg>2</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.103901" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${testcase_id}</var>
+<arg>${testcase_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.104901" elapsed="0.000000"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>${LOGIN_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.105900" elapsed="0.000000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${farmer_id}</var>
+<arg>${row}</arg>
+<arg>4</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.105900" elapsed="0.001000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${password}</var>
+<arg>${row}</arg>
+<arg>5</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.106900" elapsed="0.001002"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${expected}</var>
+<arg>${row}</arg>
+<arg>6</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.107902" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${farmer_id}</var>
+<arg>${farmer_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.108901" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${password}</var>
+<arg>${password}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.109901" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.109901" elapsed="0.000996"/>
+</kw>
+<kw name="Strip String" owner="String">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.110897" elapsed="0.000000"/>
+</kw>
+<kw name="Fill Farmer Login Form" owner="KeywordLoginFarmer">
+<arg>${farmer_id}</arg>
+<arg>${password}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:41.111904" elapsed="0.000000"/>
+</kw>
+<kw name="Submit Login" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:41.112904" elapsed="0.000000"/>
+</kw>
+<kw name="Get Actual Login Message" owner="KeywordLoginFarmer">
+<var>${actual}</var>
+<status status="NOT RUN" start="2026-08-29T07:55:41.112904" elapsed="0.000999"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>7</arg>
+<arg>${actual}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.113903" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Screenshot" owner="KeywordLoginFarmer">
+<arg>${testcase_id}</arg>
+<arg>${FEATURE_NAME}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:41.114904" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<var>${status}</var>
+<var>${error_message}</var>
+<arg>Verify Login Message</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.115906" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${is_passed}</var>
+<arg>${status == 'PASS'}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.115906" elapsed="0.001001"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Pass</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<arg>ELSE</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Fail: ${error_message}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.116907" elapsed="0.001005"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${EXCEL_PATH}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.117912" elapsed="0.000000"/>
+</kw>
+<kw name="Close Error Dialog If Present" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:41.118909" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Run Keywords</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Logout After Login</arg>
+<arg>AND</arg>
+<arg>Go To</arg>
+<arg>${LOGIN_URL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.119907" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<arg>Should Be True</arg>
+<arg>${is_passed}</arg>
+<arg>TC${testcase_id} failed: actual="${actual}" expected="${expected}"</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.119907" elapsed="0.001000"/>
+</kw>
+<arg>10</arg>
+<status status="PASS" start="2026-08-29T07:55:41.091899" elapsed="0.029008">ข้ามการทดสอบ</status>
+</kw>
+<status status="PASS" start="2026-08-29T07:55:41.078900" elapsed="0.043006">ข้ามการทดสอบ</status>
+</test>
+<test id="s1-s1-s1-t10" name="TC01_010" line="33">
+<kw name="Farmer Login Template">
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2026-08-29T07:55:41.257648" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${row}</arg>
+<arg>1</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.257648" elapsed="0.001008"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-08-29T07:55:41.259657" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.258656" elapsed="0.001001"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-08-29T07:55:41.260656" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.260656" elapsed="0.001002"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-08-29T07:55:41.262656" level="INFO">${is_skip} = True</msg>
+<var>${is_skip}</var>
+<arg>'${run_status}'.lower() == 'no'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.261658" elapsed="0.000998"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Pass Execution" owner="BuiltIn">
+<msg time="2026-08-29T07:55:41.264659" level="INFO">Execution passed with message:
+ข้ามการทดสอบ</msg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.264659" elapsed="0.000997">ข้ามการทดสอบ</status>
+</kw>
+<arg>${is_skip}</arg>
+<arg>Pass Execution</arg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.263659" elapsed="0.001997">ข้ามการทดสอบ</status>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${testcase_id}</var>
+<arg>${row}</arg>
+<arg>2</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.265656" elapsed="0.001000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${testcase_id}</var>
+<arg>${testcase_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.266656" elapsed="0.000000"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>${LOGIN_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.267657" elapsed="0.000000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${farmer_id}</var>
+<arg>${row}</arg>
+<arg>4</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.267657" elapsed="0.000999"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${password}</var>
+<arg>${row}</arg>
+<arg>5</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.268656" elapsed="0.001000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${expected}</var>
+<arg>${row}</arg>
+<arg>6</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.269656" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${farmer_id}</var>
+<arg>${farmer_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.270655" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${password}</var>
+<arg>${password}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.270655" elapsed="0.001000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.271655" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.272655" elapsed="0.000000"/>
+</kw>
+<kw name="Fill Farmer Login Form" owner="KeywordLoginFarmer">
+<arg>${farmer_id}</arg>
+<arg>${password}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:41.272655" elapsed="0.001001"/>
+</kw>
+<kw name="Submit Login" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:41.273656" elapsed="0.001000"/>
+</kw>
+<kw name="Get Actual Login Message" owner="KeywordLoginFarmer">
+<var>${actual}</var>
+<status status="NOT RUN" start="2026-08-29T07:55:41.274656" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>7</arg>
+<arg>${actual}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.275660" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Screenshot" owner="KeywordLoginFarmer">
+<arg>${testcase_id}</arg>
+<arg>${FEATURE_NAME}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:41.275660" elapsed="0.000998"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<var>${status}</var>
+<var>${error_message}</var>
+<arg>Verify Login Message</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.276658" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${is_passed}</var>
+<arg>${status == 'PASS'}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.277660" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Pass</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<arg>ELSE</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Fail: ${error_message}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.277660" elapsed="0.000998"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${EXCEL_PATH}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.278658" elapsed="0.001001"/>
+</kw>
+<kw name="Close Error Dialog If Present" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:41.279659" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Run Keywords</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Logout After Login</arg>
+<arg>AND</arg>
+<arg>Go To</arg>
+<arg>${LOGIN_URL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.280658" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<arg>Should Be True</arg>
+<arg>${is_passed}</arg>
+<arg>TC${testcase_id} failed: actual="${actual}" expected="${expected}"</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.280658" elapsed="0.001002"/>
+</kw>
+<arg>11</arg>
+<status status="PASS" start="2026-08-29T07:55:41.256473" elapsed="0.025187">ข้ามการทดสอบ</status>
+</kw>
+<status status="PASS" start="2026-08-29T07:55:41.150431" elapsed="0.132227">ข้ามการทดสอบ</status>
+</test>
+<test id="s1-s1-s1-t11" name="TC01_011" line="34">
+<kw name="Farmer Login Template">
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2026-08-29T07:55:41.330189" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${row}</arg>
+<arg>1</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.329189" elapsed="0.002001"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-08-29T07:55:41.332191" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.331190" elapsed="0.001001"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-08-29T07:55:41.333192" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.333192" elapsed="0.000997"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-08-29T07:55:41.335191" level="INFO">${is_skip} = True</msg>
+<var>${is_skip}</var>
+<arg>'${run_status}'.lower() == 'no'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.334189" elapsed="0.002001"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Pass Execution" owner="BuiltIn">
+<msg time="2026-08-29T07:55:41.338190" level="INFO">Execution passed with message:
+ข้ามการทดสอบ</msg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.338190" elapsed="0.001001">ข้ามการทดสอบ</status>
+</kw>
+<arg>${is_skip}</arg>
+<arg>Pass Execution</arg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.336190" elapsed="0.003001">ข้ามการทดสอบ</status>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${testcase_id}</var>
+<arg>${row}</arg>
+<arg>2</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.339191" elapsed="0.000998"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${testcase_id}</var>
+<arg>${testcase_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.340189" elapsed="0.000000"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>${LOGIN_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.341192" elapsed="0.000000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${farmer_id}</var>
+<arg>${row}</arg>
+<arg>4</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.342189" elapsed="0.000000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${password}</var>
+<arg>${row}</arg>
+<arg>5</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.342189" elapsed="0.000996"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${expected}</var>
+<arg>${row}</arg>
+<arg>6</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.343185" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${farmer_id}</var>
+<arg>${farmer_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.344185" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${password}</var>
+<arg>${password}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.344185" elapsed="0.001000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.345185" elapsed="0.001003"/>
+</kw>
+<kw name="Strip String" owner="String">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.346188" elapsed="0.000000"/>
+</kw>
+<kw name="Fill Farmer Login Form" owner="KeywordLoginFarmer">
+<arg>${farmer_id}</arg>
+<arg>${password}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:41.347187" elapsed="0.000000"/>
+</kw>
+<kw name="Submit Login" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:41.348189" elapsed="0.000000"/>
+</kw>
+<kw name="Get Actual Login Message" owner="KeywordLoginFarmer">
+<var>${actual}</var>
+<status status="NOT RUN" start="2026-08-29T07:55:41.348189" elapsed="0.001006"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>7</arg>
+<arg>${actual}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.349195" elapsed="0.000994"/>
+</kw>
+<kw name="Capture Screenshot" owner="KeywordLoginFarmer">
+<arg>${testcase_id}</arg>
+<arg>${FEATURE_NAME}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:41.350189" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<var>${status}</var>
+<var>${error_message}</var>
+<arg>Verify Login Message</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.351188" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${is_passed}</var>
+<arg>${status == 'PASS'}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.352188" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Pass</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<arg>ELSE</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Fail: ${error_message}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.352188" elapsed="0.000999"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${EXCEL_PATH}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.353187" elapsed="0.000000"/>
+</kw>
+<kw name="Close Error Dialog If Present" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:41.354187" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Run Keywords</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Logout After Login</arg>
+<arg>AND</arg>
+<arg>Go To</arg>
+<arg>${LOGIN_URL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.354187" elapsed="0.001002"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<arg>Should Be True</arg>
+<arg>${is_passed}</arg>
+<arg>TC${testcase_id} failed: actual="${actual}" expected="${expected}"</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.355189" elapsed="0.000998"/>
+</kw>
+<arg>12</arg>
+<status status="PASS" start="2026-08-29T07:55:41.328189" elapsed="0.027998">ข้ามการทดสอบ</status>
+</kw>
+<status status="PASS" start="2026-08-29T07:55:41.309657" elapsed="0.046530">ข้ามการทดสอบ</status>
+</test>
+<test id="s1-s1-s1-t12" name="TC01_012" line="35">
+<kw name="Farmer Login Template">
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2026-08-29T07:55:41.417200" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${row}</arg>
+<arg>1</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.416200" elapsed="0.001000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-08-29T07:55:41.418201" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.417200" elapsed="0.002001"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-08-29T07:55:41.420200" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.419201" elapsed="0.001998"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-08-29T07:55:41.422199" level="INFO">${is_skip} = True</msg>
+<var>${is_skip}</var>
+<arg>'${run_status}'.lower() == 'no'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.421199" elapsed="0.001000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Pass Execution" owner="BuiltIn">
+<msg time="2026-08-29T07:55:41.424200" level="INFO">Execution passed with message:
+ข้ามการทดสอบ</msg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.424200" elapsed="0.001001">ข้ามการทดสอบ</status>
+</kw>
+<arg>${is_skip}</arg>
+<arg>Pass Execution</arg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.423203" elapsed="0.001998">ข้ามการทดสอบ</status>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${testcase_id}</var>
+<arg>${row}</arg>
+<arg>2</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.426203" elapsed="0.000514"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${testcase_id}</var>
+<arg>${testcase_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.426717" elapsed="0.001010"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>${LOGIN_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.428726" elapsed="0.000541"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${farmer_id}</var>
+<arg>${row}</arg>
+<arg>4</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.429828" elapsed="0.000557"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${password}</var>
+<arg>${row}</arg>
+<arg>5</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.430940" elapsed="0.000553"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${expected}</var>
+<arg>${row}</arg>
+<arg>6</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.432054" elapsed="0.000534"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${farmer_id}</var>
+<arg>${farmer_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.433141" elapsed="0.000548"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${password}</var>
+<arg>${password}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.434228" elapsed="0.000562"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.434790" elapsed="0.000536"/>
+</kw>
+<kw name="Strip String" owner="String">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.435870" elapsed="0.000554"/>
+</kw>
+<kw name="Fill Farmer Login Form" owner="KeywordLoginFarmer">
+<arg>${farmer_id}</arg>
+<arg>${password}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:41.436969" elapsed="0.000545"/>
+</kw>
+<kw name="Submit Login" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:41.437514" elapsed="0.000603"/>
+</kw>
+<kw name="Get Actual Login Message" owner="KeywordLoginFarmer">
+<var>${actual}</var>
+<status status="NOT RUN" start="2026-08-29T07:55:41.438650" elapsed="0.000534"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>7</arg>
+<arg>${actual}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.439184" elapsed="0.000581"/>
+</kw>
+<kw name="Capture Screenshot" owner="KeywordLoginFarmer">
+<arg>${testcase_id}</arg>
+<arg>${FEATURE_NAME}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:41.439765" elapsed="0.000584"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<var>${status}</var>
+<var>${error_message}</var>
+<arg>Verify Login Message</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.440890" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${is_passed}</var>
+<arg>${status == 'PASS'}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.441422" elapsed="0.000538"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Pass</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<arg>ELSE</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Fail: ${error_message}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.441960" elapsed="0.000616"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${EXCEL_PATH}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.443109" elapsed="0.000544"/>
+</kw>
+<kw name="Close Error Dialog If Present" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:41.444190" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Run Keywords</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Logout After Login</arg>
+<arg>AND</arg>
+<arg>Go To</arg>
+<arg>${LOGIN_URL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.444731" elapsed="0.000539"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<arg>Should Be True</arg>
+<arg>${is_passed}</arg>
+<arg>TC${testcase_id} failed: actual="${actual}" expected="${expected}"</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.445270" elapsed="0.000534"/>
+</kw>
+<arg>13</arg>
+<status status="PASS" start="2026-08-29T07:55:41.414198" elapsed="0.031606">ข้ามการทดสอบ</status>
+</kw>
+<status status="PASS" start="2026-08-29T07:55:41.402191" elapsed="0.044682">ข้ามการทดสอบ</status>
+</test>
+<test id="s1-s1-s1-t13" name="TC01_013" line="36">
+<kw name="Farmer Login Template">
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2026-08-29T07:55:41.513317" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${row}</arg>
+<arg>1</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.512317" elapsed="0.001000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-08-29T07:55:41.515317" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.514317" elapsed="0.001000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-08-29T07:55:41.516322" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.515317" elapsed="0.002009"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-08-29T07:55:41.518321" level="INFO">${is_skip} = True</msg>
+<var>${is_skip}</var>
+<arg>'${run_status}'.lower() == 'no'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.517326" elapsed="0.000995"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Pass Execution" owner="BuiltIn">
+<msg time="2026-08-29T07:55:41.520320" level="INFO">Execution passed with message:
+ข้ามการทดสอบ</msg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.519323" elapsed="0.000997">ข้ามการทดสอบ</status>
+</kw>
+<arg>${is_skip}</arg>
+<arg>Pass Execution</arg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.518321" elapsed="0.001999">ข้ามการทดสอบ</status>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${testcase_id}</var>
+<arg>${row}</arg>
+<arg>2</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.521320" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${testcase_id}</var>
+<arg>${testcase_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.522319" elapsed="0.000000"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>${LOGIN_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.523317" elapsed="0.000000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${farmer_id}</var>
+<arg>${row}</arg>
+<arg>4</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.523317" elapsed="0.001000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${password}</var>
+<arg>${row}</arg>
+<arg>5</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.524317" elapsed="0.000000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${expected}</var>
+<arg>${row}</arg>
+<arg>6</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.525317" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${farmer_id}</var>
+<arg>${farmer_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.525317" elapsed="0.001000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${password}</var>
+<arg>${password}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.526825" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.526825" elapsed="0.001009"/>
+</kw>
+<kw name="Strip String" owner="String">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.527834" elapsed="0.000000"/>
+</kw>
+<kw name="Fill Farmer Login Form" owner="KeywordLoginFarmer">
+<arg>${farmer_id}</arg>
+<arg>${password}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:41.528833" elapsed="0.000000"/>
+</kw>
+<kw name="Submit Login" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:41.528833" elapsed="0.001000"/>
+</kw>
+<kw name="Get Actual Login Message" owner="KeywordLoginFarmer">
+<var>${actual}</var>
+<status status="NOT RUN" start="2026-08-29T07:55:41.529833" elapsed="0.001000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>7</arg>
+<arg>${actual}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.530833" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Screenshot" owner="KeywordLoginFarmer">
+<arg>${testcase_id}</arg>
+<arg>${FEATURE_NAME}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:41.531832" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<var>${status}</var>
+<var>${error_message}</var>
+<arg>Verify Login Message</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.531832" elapsed="0.001000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${is_passed}</var>
+<arg>${status == 'PASS'}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.532832" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Pass</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<arg>ELSE</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Fail: ${error_message}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.533834" elapsed="0.000000"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${EXCEL_PATH}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.533834" elapsed="0.000999"/>
+</kw>
+<kw name="Close Error Dialog If Present" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:41.534833" elapsed="0.001000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Run Keywords</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Logout After Login</arg>
+<arg>AND</arg>
+<arg>Go To</arg>
+<arg>${LOGIN_URL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.535833" elapsed="0.000613"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<arg>Should Be True</arg>
+<arg>${is_passed}</arg>
+<arg>TC${testcase_id} failed: actual="${actual}" expected="${expected}"</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.536446" elapsed="0.001009"/>
+</kw>
+<arg>14</arg>
+<status status="PASS" start="2026-08-29T07:55:41.511311" elapsed="0.026144">ข้ามการทดสอบ</status>
+</kw>
+<status status="PASS" start="2026-08-29T07:55:41.466038" elapsed="0.071417">ข้ามการทดสอบ</status>
+</test>
+<test id="s1-s1-s1-t14" name="TC01_014" line="37">
+<kw name="Farmer Login Template">
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2026-08-29T07:55:41.571456" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${row}</arg>
+<arg>1</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.570459" elapsed="0.002001"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-08-29T07:55:41.573457" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.572460" elapsed="0.002001"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-08-29T07:55:41.575459" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.574461" elapsed="0.002000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-08-29T07:55:41.577458" level="INFO">${is_skip} = True</msg>
+<var>${is_skip}</var>
+<arg>'${run_status}'.lower() == 'no'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.576461" elapsed="0.001996"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Pass Execution" owner="BuiltIn">
+<msg time="2026-08-29T07:55:41.580459" level="INFO">Execution passed with message:
+ข้ามการทดสอบ</msg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.579458" elapsed="0.002002">ข้ามการทดสอบ</status>
+</kw>
+<arg>${is_skip}</arg>
+<arg>Pass Execution</arg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.578457" elapsed="0.003003">ข้ามการทดสอบ</status>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${testcase_id}</var>
+<arg>${row}</arg>
+<arg>2</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.581460" elapsed="0.000999"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${testcase_id}</var>
+<arg>${testcase_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.583457" elapsed="0.000000"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>${LOGIN_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.584458" elapsed="0.000000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${farmer_id}</var>
+<arg>${row}</arg>
+<arg>4</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.585459" elapsed="0.000000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${password}</var>
+<arg>${row}</arg>
+<arg>5</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.586459" elapsed="0.000000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${expected}</var>
+<arg>${row}</arg>
+<arg>6</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.586459" elapsed="0.000999"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${farmer_id}</var>
+<arg>${farmer_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.588457" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${password}</var>
+<arg>${password}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.589456" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.590454" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.590454" elapsed="0.001004"/>
+</kw>
+<kw name="Fill Farmer Login Form" owner="KeywordLoginFarmer">
+<arg>${farmer_id}</arg>
+<arg>${password}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:41.591458" elapsed="0.001001"/>
+</kw>
+<kw name="Submit Login" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:41.592459" elapsed="0.000000"/>
+</kw>
+<kw name="Get Actual Login Message" owner="KeywordLoginFarmer">
+<var>${actual}</var>
+<status status="NOT RUN" start="2026-08-29T07:55:41.593465" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>7</arg>
+<arg>${actual}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.594463" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Screenshot" owner="KeywordLoginFarmer">
+<arg>${testcase_id}</arg>
+<arg>${FEATURE_NAME}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:41.594463" elapsed="0.000996"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<var>${status}</var>
+<var>${error_message}</var>
+<arg>Verify Login Message</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.595459" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${is_passed}</var>
+<arg>${status == 'PASS'}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.596458" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Pass</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<arg>ELSE</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Fail: ${error_message}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.596458" elapsed="0.001001"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${EXCEL_PATH}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.597459" elapsed="0.000998"/>
+</kw>
+<kw name="Close Error Dialog If Present" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:41.599109" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Run Keywords</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Logout After Login</arg>
+<arg>AND</arg>
+<arg>Go To</arg>
+<arg>${LOGIN_URL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.599109" elapsed="0.001012"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<arg>Should Be True</arg>
+<arg>${is_passed}</arg>
+<arg>TC${testcase_id} failed: actual="${actual}" expected="${expected}"</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.600121" elapsed="0.001002"/>
+</kw>
+<arg>15</arg>
+<status status="PASS" start="2026-08-29T07:55:41.569458" elapsed="0.031665">ข้ามการทดสอบ</status>
+</kw>
+<status status="PASS" start="2026-08-29T07:55:41.550454" elapsed="0.051667">ข้ามการทดสอบ</status>
+</test>
+<test id="s1-s1-s1-t15" name="TC01_015" line="38">
+<kw name="Farmer Login Template">
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2026-08-29T07:55:41.683659" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${row}</arg>
+<arg>1</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.682654" elapsed="0.002001"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-08-29T07:55:41.685656" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.684655" elapsed="0.001001"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-08-29T07:55:41.687654" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.686657" elapsed="0.000997"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-08-29T07:55:41.689652" level="INFO">${is_skip} = True</msg>
+<var>${is_skip}</var>
+<arg>'${run_status}'.lower() == 'no'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.688652" elapsed="0.001000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Pass Execution" owner="BuiltIn">
+<msg time="2026-08-29T07:55:41.691654" level="INFO">Execution passed with message:
+ข้ามการทดสอบ</msg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.691654" elapsed="0.001012">ข้ามการทดสอบ</status>
+</kw>
+<arg>${is_skip}</arg>
+<arg>Pass Execution</arg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.690655" elapsed="0.002011">ข้ามการทดสอบ</status>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${testcase_id}</var>
+<arg>${row}</arg>
+<arg>2</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.692666" elapsed="0.000992"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${testcase_id}</var>
+<arg>${testcase_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.694659" elapsed="0.000000"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>${LOGIN_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.695658" elapsed="0.000000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${farmer_id}</var>
+<arg>${row}</arg>
+<arg>4</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.696658" elapsed="0.000999"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${password}</var>
+<arg>${row}</arg>
+<arg>5</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.697657" elapsed="0.000000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${expected}</var>
+<arg>${row}</arg>
+<arg>6</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.698660" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${farmer_id}</var>
+<arg>${farmer_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.699656" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${password}</var>
+<arg>${password}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.699656" elapsed="0.001001"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.700657" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.701657" elapsed="0.000000"/>
+</kw>
+<kw name="Fill Farmer Login Form" owner="KeywordLoginFarmer">
+<arg>${farmer_id}</arg>
+<arg>${password}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:41.701657" elapsed="0.000997"/>
+</kw>
+<kw name="Submit Login" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:41.702654" elapsed="0.000998"/>
+</kw>
+<kw name="Get Actual Login Message" owner="KeywordLoginFarmer">
+<var>${actual}</var>
+<status status="NOT RUN" start="2026-08-29T07:55:41.703652" elapsed="0.000999"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>7</arg>
+<arg>${actual}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.704651" elapsed="0.001004"/>
+</kw>
+<kw name="Capture Screenshot" owner="KeywordLoginFarmer">
+<arg>${testcase_id}</arg>
+<arg>${FEATURE_NAME}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:41.705655" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<var>${status}</var>
+<var>${error_message}</var>
+<arg>Verify Login Message</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.706653" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${is_passed}</var>
+<arg>${status == 'PASS'}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.706653" elapsed="0.001000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Pass</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<arg>ELSE</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Fail: ${error_message}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.707653" elapsed="0.001000"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${EXCEL_PATH}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.708653" elapsed="0.000000"/>
+</kw>
+<kw name="Close Error Dialog If Present" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:41.709653" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Run Keywords</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Logout After Login</arg>
+<arg>AND</arg>
+<arg>Go To</arg>
+<arg>${LOGIN_URL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.710652" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<arg>Should Be True</arg>
+<arg>${is_passed}</arg>
+<arg>TC${testcase_id} failed: actual="${actual}" expected="${expected}"</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.710652" elapsed="0.001001"/>
+</kw>
+<arg>16</arg>
+<status status="PASS" start="2026-08-29T07:55:41.681655" elapsed="0.029998">ข้ามการทดสอบ</status>
+</kw>
+<status status="PASS" start="2026-08-29T07:55:41.634653" elapsed="0.078008">ข้ามการทดสอบ</status>
+</test>
+<test id="s1-s1-s1-t16" name="TC01_016" line="39">
+<kw name="Farmer Login Template">
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2026-08-29T07:55:41.768191" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${row}</arg>
+<arg>1</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.768191" elapsed="0.001003"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-08-29T07:55:41.770192" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.769194" elapsed="0.002005"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-08-29T07:55:41.772195" level="INFO">${run_status} = No</msg>
+<var>${run_status}</var>
+<arg>${run_status}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.771199" elapsed="0.001995"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-08-29T07:55:41.775191" level="INFO">${is_skip} = True</msg>
+<var>${is_skip}</var>
+<arg>'${run_status}'.lower() == 'no'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.773194" elapsed="0.001997"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Pass Execution" owner="BuiltIn">
+<msg time="2026-08-29T07:55:41.778196" level="INFO">Execution passed with message:
+ข้ามการทดสอบ</msg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.777195" elapsed="0.001001">ข้ามการทดสอบ</status>
+</kw>
+<arg>${is_skip}</arg>
+<arg>Pass Execution</arg>
+<arg>ข้ามการทดสอบ</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.776193" elapsed="0.002003">ข้ามการทดสอบ</status>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${testcase_id}</var>
+<arg>${row}</arg>
+<arg>2</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.779193" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${testcase_id}</var>
+<arg>${testcase_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.780194" elapsed="0.000000"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>${LOGIN_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.780194" elapsed="0.000997"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${farmer_id}</var>
+<arg>${row}</arg>
+<arg>4</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.781191" elapsed="0.000999"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${password}</var>
+<arg>${row}</arg>
+<arg>5</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.782190" elapsed="0.001003"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${expected}</var>
+<arg>${row}</arg>
+<arg>6</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.783193" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${farmer_id}</var>
+<arg>${farmer_id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.784190" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${password}</var>
+<arg>${password}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.784190" elapsed="0.000998"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.785188" elapsed="0.001000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<var>${expected}</var>
+<arg>${expected}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.786188" elapsed="0.000000"/>
+</kw>
+<kw name="Fill Farmer Login Form" owner="KeywordLoginFarmer">
+<arg>${farmer_id}</arg>
+<arg>${password}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:41.787188" elapsed="0.000000"/>
+</kw>
+<kw name="Submit Login" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:41.787188" elapsed="0.001003"/>
+</kw>
+<kw name="Get Actual Login Message" owner="KeywordLoginFarmer">
+<var>${actual}</var>
+<status status="NOT RUN" start="2026-08-29T07:55:41.788191" elapsed="0.001008"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>7</arg>
+<arg>${actual}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.789199" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Screenshot" owner="KeywordLoginFarmer">
+<arg>${testcase_id}</arg>
+<arg>${FEATURE_NAME}</arg>
+<status status="NOT RUN" start="2026-08-29T07:55:41.790193" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<var>${status}</var>
+<var>${error_message}</var>
+<arg>Verify Login Message</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.791190" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${is_passed}</var>
+<arg>${status == 'PASS'}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.791190" elapsed="0.001002"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Pass</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<arg>ELSE</arg>
+<arg>Write Excel Cell</arg>
+<arg>${row}</arg>
+<arg>8</arg>
+<arg>Fail: ${error_message}</arg>
+<arg>sheet_name=${SHEET_NAME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.792192" elapsed="0.000000"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${EXCEL_PATH}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.793194" elapsed="0.000000"/>
+</kw>
+<kw name="Close Error Dialog If Present" owner="KeywordLoginFarmer">
+<status status="NOT RUN" start="2026-08-29T07:55:41.793194" elapsed="0.001001"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>Run Keywords</arg>
+<arg>Run Keyword And Ignore Error</arg>
+<arg>Logout After Login</arg>
+<arg>AND</arg>
+<arg>Go To</arg>
+<arg>${LOGIN_URL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.794195" elapsed="0.000997"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<arg>Should Be True</arg>
+<arg>${is_passed}</arg>
+<arg>TC${testcase_id} failed: actual="${actual}" expected="${expected}"</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" start="2026-08-29T07:55:41.795192" elapsed="0.000000"/>
+</kw>
+<arg>17</arg>
+<status status="PASS" start="2026-08-29T07:55:41.766191" elapsed="0.030003">ข้ามการทดสอบ</status>
+</kw>
+<status status="PASS" start="2026-08-29T07:55:41.728192" elapsed="0.068002">ข้ามการทดสอบ</status>
+</test>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.814205" elapsed="0.001000"/>
+</kw>
+<kw name="Close Application Browser" owner="CommonKeyword">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="Browser">
+<msg time="2026-08-29T07:55:42.241834" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.817205" elapsed="0.425640"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.816205" elapsed="0.426640"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="Browser">
+<msg time="2026-08-29T07:55:42.250846" level="INFO">Closed all browsers</msg>
+<arg>ALL</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-08-29T07:55:42.244847" elapsed="0.006997"/>
+</kw>
+<arg>Close Browser</arg>
+<arg>ALL</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-08-29T07:55:42.243847" elapsed="0.007997"/>
+</kw>
+<status status="PASS" start="2026-08-29T07:55:41.815205" elapsed="0.436639"/>
+</kw>
+<kw name="Stop Application" owner="CommonKeyword">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="Browser">
+<msg time="2026-08-29T07:55:42.260223" level="INFO">No browser open, doing nothing</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-08-29T07:55:42.254843" elapsed="0.006464"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-08-29T07:55:42.253846" elapsed="0.007461"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="Browser">
+<msg time="2026-08-29T07:55:42.267930" level="INFO">Closed all browsers</msg>
+<arg>ALL</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-08-29T07:55:42.263016" elapsed="0.005458"/>
+</kw>
+<arg>Close Browser</arg>
+<arg>ALL</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-08-29T07:55:42.261853" elapsed="0.007193"/>
+</kw>
+<kw name="Terminate Process" owner="Process">
+<msg time="2026-08-29T07:55:42.270062" level="INFO">Forcefully killing process.</msg>
+<msg time="2026-08-29T07:55:42.272059" level="INFO">Process completed.</msg>
+<arg>${BACKEND_PROCESS}</arg>
+<arg>kill=True</arg>
+<doc>Stops the process gracefully or forcefully.</doc>
+<status status="PASS" start="2026-08-29T07:55:42.269046" elapsed="0.003013"/>
+</kw>
+<kw name="Terminate Process" owner="Process">
+<msg time="2026-08-29T07:55:42.274059" level="INFO">Forcefully killing process.</msg>
+<msg time="2026-08-29T07:55:42.375604" level="INFO">Process completed.</msg>
+<arg>${FRONTEND_PROCESS}</arg>
+<arg>kill=True</arg>
+<doc>Stops the process gracefully or forcefully.</doc>
+<status status="PASS" start="2026-08-29T07:55:42.273059" elapsed="0.103057"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-08-29T07:55:43.378374" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-08-29T07:55:42.377132" elapsed="1.002258"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2026-08-29T07:55:43.423398" level="INFO">Running command 'taskkill /F /IM java.exe /T 2&gt;&amp;1'.</msg>
+<arg>taskkill /F /IM java.exe /T</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2026-08-29T07:55:43.382387" elapsed="0.545360"/>
+</kw>
+<arg>Run</arg>
+<arg>taskkill /F /IM java.exe /T</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-08-29T07:55:43.380389" elapsed="0.548871"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2026-08-29T07:55:43.948275" level="INFO">Running command 'taskkill /F /IM node.exe /T 2&gt;&amp;1'.</msg>
+<arg>taskkill /F /IM node.exe /T</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2026-08-29T07:55:43.930273" elapsed="0.630308"/>
+</kw>
+<arg>Run</arg>
+<arg>taskkill /F /IM node.exe /T</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-08-29T07:55:43.929260" elapsed="0.632322"/>
+</kw>
+<status status="PASS" start="2026-08-29T07:55:42.252848" elapsed="2.308734"/>
+</kw>
+<arg>Close All Excel Documents</arg>
+<arg>AND</arg>
+<arg>Close Application Browser</arg>
+<arg>AND</arg>
+<arg>Stop Application</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-08-29T07:55:41.813206" elapsed="2.749377"/>
+</kw>
+<status status="FAIL" start="2026-08-29T07:53:51.459928" elapsed="113.102655"/>
+</suite>
+<status status="FAIL" start="2026-08-29T07:53:51.451927" elapsed="113.133655"/>
+</suite>
+<status status="FAIL" start="2026-08-29T07:53:51.357799" elapsed="113.236785"/>
+</suite>
+<statistics>
+<total>
+<stat pass="15" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="RiceClaimTest" id="s1" pass="15" fail="1" skip="0">RiceClaimTest</stat>
+<stat name="Tests" id="s1-s1" pass="15" fail="1" skip="0">RiceClaimTest.Tests</stat>
+<stat name="TC01 LoginFarmer" id="s1-s1-s1" pass="15" fail="1" skip="0">RiceClaimTest.Tests.TC01 LoginFarmer</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-08-29T07:55:44.573585" level="ERROR">Calling method '_end_suite' of listener 'Browser' failed: ConnectionError: Playwright process has been terminated with code 1</msg>
+</errors>
+</robot>

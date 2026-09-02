@@ -1,0 +1,52 @@
+{"level":30,"time":"2026-06-06T12:42:00.377Z","pid":7064,"hostname":"F","msg":"Listening on 127.0.0.1:63767"}
+{"level":30,"time":"2026-06-06T12:42:00.835Z","pid":7064,"hostname":"F","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2026-06-06T12:42:01.771Z","pid":7064,"hostname":"F","msg":"Adding browser to stack: chromium, version: 141.0.7390.37"}
+{"level":30,"time":"2026-06-06T12:42:01.772Z","pid":7064,"hostname":"F","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2026-06-06T12:42:01.772Z","pid":7064,"hostname":"F","msg":"End of node method newBrowser"}
+{"level":30,"time":"2026-06-06T12:42:01.808Z","pid":7064,"hostname":"F","msg":"Start of node method newPage"}
+{"level":30,"time":"2026-06-06T12:42:01.809Z","pid":7064,"hostname":"F","msg":"currentBrowser: {\"name\":\"chromium\",\"browser\":{\"_type\":\"Browser\",\"_guid\":\"browser@ff775c3eba9b0e770ca172756585ca19\"},\"headless\":false,\"_contextStack\":[],\"id\":\"browser=3cc6681c-9e8f-450c-ac9d-046ac7b8acf8\"}"}
+{"level":30,"time":"2026-06-06T12:42:01.886Z","pid":7064,"hostname":"F","msg":"Setting default timeout for context context=c7196c66-64b7-4c7a-bf0e-33240dbc21ef to 120000"}
+{"level":30,"time":"2026-06-06T12:42:01.886Z","pid":7064,"hostname":"F","msg":"Changed active context: context=c7196c66-64b7-4c7a-bf0e-33240dbc21ef"}
+{"level":30,"time":"2026-06-06T12:42:02.394Z","pid":7064,"hostname":"F","msg":"Video path: undefined"}
+{"level":30,"time":"2026-06-06T12:42:02.395Z","pid":7064,"hostname":"F","msg":"Changed active page"}
+{"level":30,"time":"2026-06-06T12:42:03.560Z","pid":7064,"hostname":"F","msg":"End of node method newPage"}
+{"level":30,"time":"2026-06-06T12:42:03.582Z","pid":7064,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-06-06T12:42:03.583Z","pid":7064,"hostname":"F","msg":"Strict mode is enabled, find Locator with role=link[name=\"เข้าสู่ระบบ\"] in page."}
+{"level":30,"time":"2026-06-06T12:42:04.413Z","pid":7064,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-06-06T12:42:04.423Z","pid":7064,"hostname":"F","msg":"Start of node method click"}
+{"level":30,"time":"2026-06-06T12:42:04.424Z","pid":7064,"hostname":"F","msg":"Strict mode is enabled, find Locator with //button[@value='farmer'] in page."}
+{"level":30,"time":"2026-06-06T12:42:04.521Z","pid":7064,"hostname":"F","msg":"End of node method click"}
+{"level":30,"time":"2026-06-06T12:42:04.530Z","pid":7064,"hostname":"F","msg":"Start of node method fillText"}
+{"level":30,"time":"2026-06-06T12:42:04.530Z","pid":7064,"hostname":"F","msg":"Strict mode is enabled, find Locator with //input >> nth = 0 in page."}
+{"level":30,"time":"2026-06-06T12:42:04.559Z","pid":7064,"hostname":"F","msg":"End of node method fillText"}
+{"level":30,"time":"2026-06-06T12:42:07.578Z","pid":7064,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-06-06T12:42:07.585Z","pid":7064,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-06-06T12:42:07.591Z","pid":7064,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-06-06T12:42:07.595Z","pid":7064,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-06-06T12:42:07.603Z","pid":7064,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-06-06T12:42:07.606Z","pid":7064,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-06-06T12:42:07.613Z","pid":7064,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-06-06T12:42:07.616Z","pid":7064,"hostname":"F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-06-06T12:42:07.621Z","pid":7064,"hostname":"F","msg":"Changed active context: context=c7196c66-64b7-4c7a-bf0e-33240dbc21ef"}
+{"level":30,"time":"2026-06-06T12:42:07.622Z","pid":7064,"hostname":"F","msg":"Changing current active page: page=711f8c7f-b2f7-46e1-8317-9ed2d160e4d8"}
+{"level":30,"time":"2026-06-06T12:42:07.622Z","pid":7064,"hostname":"F","msg":"Changed active page"}
+{"level":30,"time":"2026-06-06T12:42:07.627Z","pid":7064,"hostname":"F","msg":"Start of node method closeContext"}
+{"level":30,"time":"2026-06-06T12:42:07.647Z","pid":7064,"hostname":"F","msg":"Removed page=b6b13c34-8cc0-47f8-bce0-5ec414197f42 from context=c7196c66-64b7-4c7a-bf0e-33240dbc21ef page stack"}
+{"level":30,"time":"2026-06-06T12:42:07.709Z","pid":7064,"hostname":"F","msg":"End of node method closeContext"}
+{"level":30,"time":"2026-06-06T12:42:07.735Z","pid":7064,"hostname":"F","msg":"Start of node method closeBrowser"}
+{"level":30,"time":"2026-06-06T12:42:08.173Z","pid":7064,"hostname":"F","msg":"End of node method closeBrowser"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\fexrn\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:536:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2026-06-06T12:43:20.157Z","pid":7064,"hostname":"F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-06-06T12:43:20.157Z","pid":7064,"hostname":"F","msg":"End of node method getBrowserCatalog"}
